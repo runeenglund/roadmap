@@ -55,6 +55,12 @@
     display: table;
 }
 
+.box a{
+    color: #F06F63;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 .publication{
     display: flex;
     background-color: #F06F63;

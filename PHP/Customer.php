@@ -10,7 +10,7 @@
 <body>
     <h1>Roadmap</h1>
     <p>Ved at klikke ind på funktionerne, kan i vote omkring dem og tilknytte kommentarer.</p>
-    <p>Der kan forekomme ændringer efter jeres voteringer.</p>
+    <p>OBS! Der kan forekomme ændringer efter jeres voteringer.</p>
     <div class="box-container">
         <div class="box">
             <h2>overskrift1</h2>
