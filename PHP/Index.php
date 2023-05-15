@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,12 @@
     <title>Document</title>
 </head>
 <body>
-    <p>dette er en test</p>
+    <div id="headerBox">
+        <div class="innerBox">
+            <div class ="outerBox">
+
+            </div>
+        </div>
+    </div>
 </body>
 </html>
