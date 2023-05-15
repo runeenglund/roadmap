@@ -15,10 +15,10 @@
                 <div class ="hej1">
                     <h1>hej</h1>
                 </div>
-                <div>
+                <div class ="hej2">
                     <h1>hej</h1>
                 </div>
-                <div>
+                <div class ="hej3">
                     <h1>hej</h1>
                 </div>
             </div>
