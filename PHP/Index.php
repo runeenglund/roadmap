@@ -10,16 +10,24 @@
 </head>
 <body>
     <div id="headerBox">
+        <div class="headerTitles">
+            <h1>hej</h1>
+            <h1>hej</h1>
+            <h1>hej</h1>
+        </div>
         <div class="innerBox">
+            <h2>lefw</h2>
             <div class ="outerBox">
-                <div class ="hej1">
-                    <h1>hej</h1>
-                </div>
-                <div class ="hej2">
-                    <h1>hej</h1>
-                </div>
-                <div class ="hej3">
-                    <h1>hej</h1>
+                div <div class="box">
+                    <div class ="hej1">
+                        <h1>hej</h1>
+                    </div>
+                    <div class ="hej2">
+                        <h1>hej</h1>
+                    </div>
+                    <div class ="hej3">
+                        <h1>hej</h1>
+                    </div>
                 </div>
             </div>
         </div>

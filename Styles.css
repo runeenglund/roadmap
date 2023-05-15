@@ -1,13 +1,50 @@
+#headerBox {
+     align-items: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: blue;
+}
+
+#headerBox .headerTitles {
+    height: 50px;
+    padding: 10px 50px 10px 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.innerBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: red;
+}
+
+.outerBox {
+    
+    background-color: orange;
+}
+
+.box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px 0 10px;
+    background-color: blueviolet;
+}
+
 .hej1 {
     background-color: green;
 }
 
 .hej2 {
-    background-color: green;
+    background-color: yellow;
 }
 
 .hej3 {
-    background-color: green;
+    background-color: aquamarine;
 }
 
 
