@@ -2,8 +2,9 @@
 #headerBox {
      align-items: center;
     flex-direction: column;
-    width: 100%;
+    width: 70%;
     background-color: blue;
+    margin: 100px auto;
 }
 
 #headerBox .headerTitles {
@@ -19,24 +20,27 @@
     background-color: orange;
 }
 
-.box {
-    display: flex;
+.innerBox {
+    /* display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; */
     margin: 0 10px 0 10px;
     background-color: blueviolet;
 }
 
 .hej1 {
     background-color: green;
+    height: 100px;
 }
 
 .hej2 {
     background-color: yellow;
+    height: 100px;
 }
 
 .hej3 {
     background-color: aquamarine;
+    height: 100px;
 }
 
 
