@@ -16,14 +16,20 @@
             <h1>hej</h1>
         </div>
         <div class ="outerBox">
-            <div class="box">
+            <div class="innerBox">
                 <div class ="hej1">
+                    <h1>hej</h1>
+                    <h1>hej</h1>
                     <h1>hej</h1>
                 </div>
                 <div class ="hej2">
                     <h1>hej</h1>
+                    <h1>hej</h1>
+                    <h1>hej</h1>
                 </div>
                 <div class ="hej3">
+                    <h1>hej</h1>
+                    <h1>hej</h1>
                     <h1>hej</h1>
                 </div>
             </div>
