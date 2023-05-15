@@ -1,3 +1,4 @@
+/* -----------------Employee------------------ */
 #headerBox {
      align-items: center;
     flex-direction: column;
@@ -40,7 +41,7 @@
 
 
 
-/* Customer */
+/* -----------------Customer------------------ */
 .box-container{
     display: flex;
     justify-content: center;
