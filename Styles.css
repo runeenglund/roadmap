@@ -13,17 +13,8 @@
     justify-content: space-between;
 }
 
-.innerBox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-    background-color: red;
-}
 
 .outerBox {
-    
     background-color: orange;
 }
 
