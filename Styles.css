@@ -49,12 +49,14 @@ body {
     background-color: #FEFEFE;
     height: 100px;
     display: flex;
+    justify-content: space-between;
 }
 
 .hej2, .hej4 {
     background-color: #E8F3F4;
     height: 100px;
     display: flex;
+    justify-content: space-between;
 }
 
 
