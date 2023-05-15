@@ -1,3 +1,4 @@
+/* -----------------Employee------------------ */
 #headerBox {
      align-items: center;
     flex-direction: column;
@@ -57,14 +58,14 @@
 
 
 
-/* Customer */
-.box-container{
+/* -----------------Customer------------------ */
+.customer-box-container{
     display: flex;
     justify-content: center;
     flex-direction: row;
 }
 
-.box{
+.customer-box{
     background-color: #2A5EF6;
     color: #fff;
     width: 25%;
@@ -72,13 +73,13 @@
     display: table;
 }
 
-.box a{
+.customer-box a{
     color: #F06F63;
     text-decoration: none;
     font-weight: bold;
 }
 
-.publication{
+.customer-publication{
     display: flex;
     background-color: #F06F63;
     float: right;
