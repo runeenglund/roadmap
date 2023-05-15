@@ -23,23 +23,36 @@
     /* display: flex;
     justify-content: space-between;
     align-items: center; */
+    height: 200px;
+    overflow: hidden;
+    overflow-y: scroll;
     margin: 0 10px 0 10px;
     background-color: blueviolet;
+}
+
+.innerbox::-webkit-scrollbar {
+    width: 10px;
 }
 
 .hej1 {
     background-color: green;
     height: 100px;
+    display: flex;
+    margin: 10px 0px;
 }
 
 .hej2 {
     background-color: yellow;
     height: 100px;
+    display: flex;
+    margin: 10px 0px;
 }
 
 .hej3 {
     background-color: aquamarine;
     height: 100px;
+    display: flex;
+    margin: 10px 0px;
 }
 
 
