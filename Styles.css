@@ -44,14 +44,31 @@
 
 
 
-/* Rune skriv herunder */
-
+/* Customer */
+.box-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
 
 .box{
-    background-color: blue;
-    color: white;
-    float: left;
+    background-color: #2A5EF6;
+    color: #fff;
     width: 25%;
     padding: 10px;
     display: table;
+}
+
+.box a{
+    color: #F06F63;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.publication{
+    display: flex;
+    background-color: #F06F63;
+    float: right;
+    justify-content: center;
+    width: 25%;
 }
