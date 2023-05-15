@@ -25,14 +25,24 @@
     justify-content: space-between;
     align-items: center; */
     height: 200px;
+    width: 100%;
     overflow: hidden;
     overflow-y: scroll;
-    margin: 0 10px 0 10px;
     background-color: blueviolet;
 }
 
-.innerbox::-webkit-scrollbar {
-    width: 10px;
+.outerBox ::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 10px;
 }
 
 .hej1 {
@@ -51,6 +61,13 @@
 
 .hej3 {
     background-color: aquamarine;
+    height: 100px;
+    display: flex;
+    margin: 10px 0px;
+}
+
+.hej4 {
+    background-color: sandybrown;
     height: 100px;
     display: flex;
     margin: 10px 0px;
