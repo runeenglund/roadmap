@@ -1,4 +1,9 @@
 /* -----------------Employee------------------ */
+
+body {
+    background-color: #062B95;
+}
+
 #headerBox {
      align-items: center;
     flex-direction: column;
