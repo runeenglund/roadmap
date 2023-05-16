@@ -12,7 +12,6 @@
     <h1>Roadmap</h1>
     <p>Ved at klikke ind på funktionerne, kan i vote omkring dem og tilknytte kommentarer.</p>
     <p>OBS! Der kan forekomme ændringer efter jeres voteringer.</p>
-    <button onclick="on()">overlay</button>
     <div id="overlay" onclick="off()">
         <div class="overlay-box">
             <p>teeeeest</p>
@@ -22,7 +21,7 @@
         <div class="customer-box">
             <h2>overskrift1</h2>
             <p>text1</p>
-            <a href="">Læs mere</a>
+            <p class="overlay-link" onclick="on()">Læs mere</p>
             <div class="customer-publication">
                 <p>Udgivelse</p>
             </div>
@@ -30,7 +29,7 @@
         <div class="customer-box">
             <h2>overskrift2</h2>
             <p>text2</p>
-            <a href="">Læs mere</a>
+            <p class="overlay-link" onclick="on()">Læs mere</p>
             <div class="customer-publication">
                 <p>Udgivelse</p>
             </div>
@@ -38,7 +37,7 @@
         <div class="customer-box">
             <h2>overskrift3</h2>
             <p>text3</p>
-            <a href="">Læs mere</a>
+            <p class="overlay-link" onclick="on()">Læs mere</p>
             <div class="customer-publication">
                 <p>Udgivelse</p>
             </div>
