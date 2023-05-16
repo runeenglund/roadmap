@@ -14,7 +14,7 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     margin: 100px auto;
     height: 100px;
-    display: block;
+    /* display: block; */
     overflow: hidden;
     overflow-y: scroll;
 }
@@ -47,6 +47,7 @@ body {
 
 .content-table tbody tr {
     border-bottom: 1px solid #dddddd;
+    background-color: #E8F3F4;
 }
 
 .content-table tbody tr:nth-of-type(even) {
@@ -57,16 +58,12 @@ body {
     background-color: #E8F3F4;
 }
 
-.content-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
-}
-
 .content-table tbody tr.active-row {
     font-weight: bold;
-    color: #009879;
+    background-color: #FEFEFE;
 }
 
-#top3HeaderBox {
+/* #top3HeaderBox {
      align-items: center;
     flex-direction: column;
     width: 70%;
@@ -83,9 +80,9 @@ body {
 }
 
 .top3InnerBox {
-    /* display: flex;
+    display: flex;
     justify-content: space-between;
-    align-items: center; */
+    align-items: center;
     height: 300px;
     width: 100%;  
 }
@@ -107,9 +104,9 @@ body {
 }
 
 .innerBox {
-    /* display: flex;
+    display: flex;
     justify-content: space-between;
-    align-items: center; */
+    align-items: center;
     height: 200px;
     width: 100%;
     overflow: hidden;
@@ -148,7 +145,7 @@ body {
     justify-content: space-between;
     padding: 0 50px;
 }
-
+ */
 
 
 

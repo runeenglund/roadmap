@@ -9,37 +9,67 @@
     <link rel="stylesheet" type="text/css" href="../Styles.css" />
 </head>
 <body>
-      <table class="content-table">
+    <table class="content-table">
         <thead>
           <tr>
-            <th>Rank</th>
-            <th>Name</th>
-            <th>Points</th>
-            <th>Team</th>
+            <th>Navn</th>
+            <th>Bedømmelse</th>
+            <th>Status</th>
+            <th>Kommentarer</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>1</td>
-            <td>Domenic</td>
-            <td>88,110</td>
-            <td>dcode</td>
+            <td>Formular</td>
+            <td>2</td>
+            <td>Igangværende</td>
+            <td>1 kommentar</td>
           </tr>
           <tr class="active-row">
+            <td>Dashboard</td>
             <td>2</td>
-            <td>Sally</td>
-            <td>72,400</td>
-            <td>Students</td>
+            <td>ventende</td>
+            <td>1 kommentar</td>
           </tr>
           <tr>
-            <td>3</td>
-            <td>Nick</td>
-            <td>52,300</td>
-            <td>dcode</td>
+            <td>Ændring i menubar</td>
+            <td>2</td>
+            <td>Igangvære</td>
+            <td>1 kommentar</td>
           </tr>
         </tbody>
       </table>
-    <div id="top3HeaderBox">
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Navn</th>
+            <th>Bedømmelse</th>
+            <th>Status</th>
+            <th>Kommentarer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Formular</td>
+            <td>2</td>
+            <td>Igangværende</td>
+            <td>1 kommentar</td>
+          </tr>
+          <tr class="active-row">
+            <td>Dashboard</td>
+            <td>2</td>
+            <td>ventende</td>
+            <td>1 kommentar</td>
+          </tr>
+          <tr>
+            <td>Ændring i menubar</td>
+            <td>2</td>
+            <td>Igangvære</td>
+            <td>1 kommentar</td>
+          </tr>
+        </tbody>
+      </table>
+<!--     <div id="top3HeaderBox">
         <div class="top3HeaderTitles">
             <h1>Navn</h1>
             <h1>Bedømmelse</h1>
@@ -104,6 +134,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </body>
 </html>
