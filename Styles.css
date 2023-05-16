@@ -4,6 +4,30 @@ body {
     background-color: #062B95;
 }
 
+#top3HeaderBox {
+     align-items: center;
+    flex-direction: column;
+    width: 70%;
+    background-color: #2A5EF6;
+    margin: 100px auto;
+}
+
+#top3HeaderBox .top3HeaderTitles {
+    height: 50px;
+    padding: 10px 50px 10px 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.top3InnerBox {
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+    height: 300px;
+    width: 100%;  
+}
+
 #headerBox {
      align-items: center;
     flex-direction: column;
@@ -50,6 +74,7 @@ body {
     height: 100px;
     display: flex;
     justify-content: space-between;
+    padding: 0px 50px;
 }
 
 .hej2, .hej4 {
@@ -57,6 +82,7 @@ body {
     height: 100px;
     display: flex;
     justify-content: space-between;
+    padding: 0px 50px;
 }
 
 

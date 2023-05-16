@@ -9,15 +9,15 @@
     <link rel="stylesheet" type="text/css" href="../Styles.css" />
 </head>
 <body>
-    <div id="headerBox">
-        <div class="headerTitles">
+    <div id="top3HeaderBox">
+        <div class="top3HeaderTitles">
             <h1>hej</h1>
             <h1>hej</h1>
             <h1>hej</h1>
             <h1>hej</h1>
         </div>
-        <div class ="outerBox">
-            <div class="innerBox">
+        <div class ="top3OuterBox">
+            <div class="top3InnerBox">
                 <div class ="hej1">
                     <h1>hej</h1>
                     <h1>hej</h1>
@@ -31,12 +31,6 @@
                     <h1>hej</h1>
                 </div>
                 <div class ="hej3">
-                    <h1>hej</h1>
-                    <h1>hej</h1>
-                    <h1>hej</h1>
-                    <h1>hej</h1>
-                </div>
-                 <div class ="hej4">
                     <h1>hej</h1>
                     <h1>hej</h1>
                     <h1>hej</h1>
