@@ -6,11 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kunder</title>
     <link rel="stylesheet" type="text/css" href="../Styles.css" />
+    <script src="../customer.js" defer></script>
 </head>
 <body>
     <h1>Roadmap</h1>
     <p>Ved at klikke ind på funktionerne, kan i vote omkring dem og tilknytte kommentarer.</p>
     <p>OBS! Der kan forekomme ændringer efter jeres voteringer.</p>
+    <button onclick="on()">overlay</button>
+    <div id="overlay" onclick="off()">
+        <div class="overlay-box">
+            <p>teeeeest</p>
+        </div>
+    </div>
     <div class="customer-box-container">
         <div class="customer-box">
             <h2>overskrift1</h2>
