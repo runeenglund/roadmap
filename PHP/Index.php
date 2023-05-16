@@ -9,7 +9,10 @@
     <link rel="stylesheet" type="text/css" href="../Styles.css" />
 </head>
 <body>
-    <table class="content-table">
+    <div>
+        <h1>Top 3</h1>
+    </div>
+    <table class="content-table-top3">
         <thead>
           <tr>
             <th>Navn</th>
