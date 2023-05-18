@@ -31,32 +31,42 @@ if($action=='show'){
 }
 
 
-if($action=='add'){
-    $firstName=$_POST['firstName'];
-    $lastName=$_POST['lastName'];
- 
-    if($firstName==''){
+if($action=='addtasks'){
+    $navn = $_POST['navn'];
+    $bedømmelse = $_POST['bedømmelse'];
+    $status = $_POST['status'];
+    $kommentar = $_POST['kommentar'];
+    
+    if($navn==''){
         $out['error']=true;
-        $out['message']='Add Member Failed. firstname Empty.';
+        $out['message']='Add task Failed. navn Empty.';
     }
-    elseif($lastName==''){
+    elseif($bedømmelse==''){
         $out['error']=true;
-        $out['message']='Add Member Failed. lastName Empty.';
+        $out['message']='Add task Failed. bedømmelse Empty.';
+    }
+    elseif($status==''){
+        $out['error']=true;
+        $out['message']='Add task Failed. status Empty.';
+    }
+    elseif($kommentar==''){
+        $out['error']=true;
+        $out['message']='Add bod Failed. kommentar Empty.';
     }
     else{
-        $sql="insert into registration ( firstName, lastName) values ('$firstName', '$lastName')";
+        $sql="INSERT INTO tasks ( navn, bedømmelse, status, kommentar) VALUES ('$navn', '$bedømmelse', '$estatus', '$kommentar')";
         $query=$conn->query($sql);
- 
+    
         if($query){
-            $out['message']='Member Successfully Added';
+            $out['message']='Rask Successfully Added';
         }
         else{
             $out['error']=true;
             $out['message']='Error in Adding Occured';
         }
-         
+
+        }
     }
-}
 
 $conn->close();
  
