@@ -86,7 +86,7 @@
         }
     }
     
-    if($action=='deleteboder'){
+    if($action=='deletetasks'){
      
         $sql="DELETE FROM tasks WHERE navn=$navn";
         $query=$conn->query($sql);
