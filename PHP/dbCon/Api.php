@@ -2,7 +2,7 @@
     $host = "127.0.0.1"; //Host name 
     $user = "root"; // User 
     $password = ""; // Password 
-    $dbname = "storms1"; // Database name
+    $dbname = "hr_on_roadmap"; // Database name
 
     $conn = new mysqli("localhost","root","","storms1");
 
