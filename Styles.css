@@ -125,6 +125,11 @@ body {
     background-color: #FEFEFE;
 }
 
+.opretBTN {
+    height: 50px;
+    background-color: #F06F63;
+    justify-content: center;
+}
 
 /* -----------------Customer------------------ */
 .customer-box-container{
