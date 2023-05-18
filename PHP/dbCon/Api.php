@@ -22,39 +22,39 @@
     if($action=='tasks'){
     $sql = "SELECT * FROM tasks";
     $query = $conn->query($sql);
-    $boder = array();
+    $tasks = array();
  
     while($row = $query->fetch_array()){
-        array_push($boder, $row);
+        array_push($tasks, $row);
     }
  
-    $out['boder'] = $boder;
+    $out['tasks'] = $tasks;
     }
     
-    if($action=='addboder'){
-        $bodnr = $_POST['bod_nr'];
-        $bodnavn = $_POST['bod_navn'];
-        $email = $_POST['email'];
-        $adgangskode = $_POST['adgangskode'];
+    if($action=='addtasks'){
+        $navn = $_POST['navn'];
+        $bedømmelse = $_POST['bedømmelse'];
+        $status = $_POST['status'];
+        $kommentar = $_POST['kommentar'];
      
-        if($bodnr==''){
+        if($navn==''){
             $out['error']=true;
-            $out['message']='Add bod Failed. bodnr Empty.';
+            $out['message']='Add task Failed. navn Empty.';
         }
-        elseif($bodnavn==''){
+        elseif($bedømmelse==''){
             $out['error']=true;
-            $out['message']='Add bod Failed. bodnavn Empty.';
+            $out['message']='Add task Failed. bedømmelse Empty.';
         }
-        elseif($email==''){
+        elseif($status==''){
             $out['error']=true;
-            $out['message']='Add bod Failed. email Empty.';
+            $out['message']='Add task Failed. status Empty.';
         }
-        elseif($adgangskode==''){
+        elseif($kommentar==''){
             $out['error']=true;
-            $out['message']='Add bod Failed. adgangskode Empty.';
+            $out['message']='Add bod Failed. kommentar Empty.';
         }
         else{
-            $sql="INSERT INTO boder ( bod_nr, bod_navn, email, adgangskode) VALUES ('$bodnr', '$bodnavn', '$email', '$adgangskode')";
+            $sql="INSERT INTO tasks ( navn, bedømmelse, status, kommentar) VALUES ('$navn', '$bedømmelse', '$estatus', '$kommentar')";
             $query=$conn->query($sql);
      
             if($query){
