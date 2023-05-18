@@ -2,9 +2,9 @@
     $host = "127.0.0.1"; //Host name 
     $user = "root"; // User 
     $password = ""; // Password 
-    $dbname = "test1"; // Database name
+    $dbname = "hr_on_roadmap"; // Database name
 
-$conn = new mysqli("localhost","root","","test1");
+$conn = new mysqli("localhost","root","","hr_on_roadmap");
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -19,7 +19,7 @@ if(isset($_GET['action'])){
 }
  
 if($action=='show'){
-    $sql = "select * from registration";
+    $sql = "select * from tasks";
     $query = $conn->query($sql);
     $registration = array();
  

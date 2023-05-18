@@ -4,7 +4,7 @@
     $password = ""; // Password 
     $dbname = "hr_on_roadmap"; // Database name
 
-    $conn = new mysqli("localhost","root","","storms1");
+    $conn = new mysqli("localhost","root","","hr_on_roadmap");
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
@@ -19,8 +19,8 @@
     }
     
     // CRUD ********************************
-    if($action=='showboder'){
-    $sql = "SELECT * FROM boder";
+    if($action=='tasks'){
+    $sql = "SELECT * FROM tasks";
     $query = $conn->query($sql);
     $boder = array();
  
