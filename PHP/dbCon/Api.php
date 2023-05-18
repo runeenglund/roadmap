@@ -2,15 +2,13 @@
     $host = "127.0.0.1"; //Host name 
     $user = "root"; // User 
     $password = ""; // Password 
-    $dbname = "hr_on_roadmap"; // Database name
+    $dbname = "roadmap"; // Database name
 
-    $conn = new mysqli("localhost","root","","hr_on_roadmap");
+    $conn = new mysqli("127.0.0.1","root","","roadmap");
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-    
-    $out = array('error' => false);
     
     $action="show";
     
