@@ -36,141 +36,145 @@
       </div>
     </div>
 
-    <table class="content-table-top3">
-        <thead>
-          <tr>
-            <th>Navn</th>
-            <th>Bedømmelse</th>
-            <th>Status</th>
-            <th>Kommentarer</th>
-            <th>Rediger</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Formular</td>
-            <td>2</td>
-            <td>Igangværende</td>
-            <td>1 kommentar</td>
-            <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-          </tr>
-          <tr>
-            <td>Dashboard</td>
-            <td>2</td>
-            <td>ventende</td>
-            <td>1 kommentar</td>
-            <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-          </tr>
-          <tr>
-            <td>Ændring i menubar</td>
-            <td>2</td>
-            <td>Igangvære</td>
-            <td>1 kommentar</td>
-            <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class ="headerTitle">
-        <h1>Top 3</h1>
+    <div class="table">
+      <table class="content-table-top3">
+          <thead>
+            <tr>
+              <th>Navn</th>
+              <th>Bedømmelse</th>
+              <th>Status</th>
+              <th>Kommentarer</th>
+              <th>Rediger</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Formular</td>
+              <td>2</td>
+              <td>Igangværende</td>
+              <td>1 kommentar</td>
+              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
+            </tr>
+            <tr>
+              <td>Dashboard</td>
+              <td>2</td>
+              <td>ventende</td>
+              <td>1 kommentar</td>
+              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
+            </tr>
+            <tr>
+              <td>Ændring i menubar</td>
+              <td>2</td>
+              <td>Igangvære</td>
+              <td>1 kommentar</td>
+              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
-      <table class="content-table">
-        <thead>
-          <tr>
-            <th>Navn</th>
-            <th>Bedømmelse</th>
-            <th>Status</th>
-            <th>Kommentarer</th>
-            <th>Rediger</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Formular</td>
-            <td>2</td>
-            <td>Igangværende</td>
-            <td>1 kommentar</td>
-            <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-          </tr>
-          <tr>
-            <td>Dashboard</td>
-            <td>2</td>
-            <td>ventende</td>
-            <td>1 kommentar</td>
-            <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-          </tr>
-          <tr>
-            <td>Ændring i menubar</td>
-            <td>2</td>
-            <td>Igangvære</td>
-            <td>1 kommentar</td>
-            <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-          </tr>
-          <tr>
-            <td>Formular</td>
-            <td>2</td>
-            <td>Igangværende</td>
-            <td>1 kommentar</td>
-            <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-          </tr>
-          <tr>
-            <td>Dashboard</td>
-            <td>2</td>
-            <td>ventende</td>
-            <td>1 kommentar</td>
-            <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-          </tr>
-          <tr>
-            <td>Ændring i menubar</td>
-            <td>2</td>
-            <td>Igangvære</td>
-            <td>1 kommentar</td>
-            <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-          </tr>
-          <tr>
-            <td>Formular</td>
-            <td>2</td>
-            <td>Igangværende</td>
-            <td>1 kommentar</td>
-            <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-          </tr>
-          <tr>
-            <td>Dashboard</td>
-            <td>2</td>
-            <td>ventende</td>
-            <td>1 kommentar</td>
-            <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-          </tr>
-          <tr>
-            <td>Ændring i menubar</td>
-            <td>2</td>
-            <td>Igangvære</td>
-            <td>1 kommentar</td>
-            <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-          </tr>
-          <tr>
-            <td>Formular</td>
-            <td>2</td>
-            <td>Igangværende</td>
-            <td>1 kommentar</td>
-            <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-          </tr>
-          <tr>
-            <td>Dashboard</td>
-            <td>2</td>
-            <td>ventende</td>
-            <td>1 kommentar</td>
-            <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-          </tr>
-          <tr>
-            <td>Ændring i menubar</td>
-            <td>2</td>
-            <td>Igangvære</td>
-            <td>1 kommentar</td>
-            <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-          </tr>
-        </tbody>
-      </table>
+        
+        <div class ="headerTitle">
+          <h1>Top 3</h1>
+        </div>
+      <div class="table">
+        <table class="content-table">
+          <thead>
+            <tr>
+              <th>Navn</th>
+              <th>Bedømmelse</th>
+              <th>Status</th>
+              <th>Kommentarer</th>
+              <th>Rediger</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Formular</td>
+              <td>2</td>
+              <td>Igangværende</td>
+              <td>1 kommentar</td>
+              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
+            </tr>
+            <tr>
+              <td>Dashboard</td>
+              <td>2</td>
+              <td>ventende</td>
+              <td>1 kommentar</td>
+              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
+            </tr>
+            <tr>
+              <td>Ændring i menubar</td>
+              <td>2</td>
+              <td>Igangvære</td>
+              <td>1 kommentar</td>
+              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
+            </tr>
+            <tr>
+              <td>Formular</td>
+              <td>2</td>
+              <td>Igangværende</td>
+              <td>1 kommentar</td>
+              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
+            </tr>
+            <tr>
+              <td>Dashboard</td>
+              <td>2</td>
+              <td>ventende</td>
+              <td>1 kommentar</td>
+              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
+            </tr>
+            <tr>
+              <td>Ændring i menubar</td>
+              <td>2</td>
+              <td>Igangvære</td>
+              <td>1 kommentar</td>
+              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
+            </tr>
+            <tr>
+              <td>Formular</td>
+              <td>2</td>
+              <td>Igangværende</td>
+              <td>1 kommentar</td>
+              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
+            </tr>
+            <tr>
+              <td>Dashboard</td>
+              <td>2</td>
+              <td>ventende</td>
+              <td>1 kommentar</td>
+              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
+            </tr>
+            <tr>
+              <td>Ændring i menubar</td>
+              <td>2</td>
+              <td>Igangvære</td>
+              <td>1 kommentar</td>
+              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
+            </tr>
+            <tr>
+              <td>Formular</td>
+              <td>2</td>
+              <td>Igangværende</td>
+              <td>1 kommentar</td>
+              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
+            </tr>
+            <tr>
+              <td>Dashboard</td>
+              <td>2</td>
+              <td>ventende</td>
+              <td>1 kommentar</td>
+              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
+            </tr>
+            <tr>
+              <td>Ændring i menubar</td>
+              <td>2</td>
+              <td>Igangvære</td>
+              <td>1 kommentar</td>
+              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 </body>
 </html>

@@ -141,6 +141,11 @@ body {
     /* display: block; */
     overflow: hidden;
     overflow-y: scroll;
+    overflow-x: auto;
+}
+
+.table {
+    overflow-x: auto;
 }
 
 .content-table thead tr {
