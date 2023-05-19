@@ -5,15 +5,77 @@ body {
     padding: 20px;
 }
 
-.top3 {
-    padding-left: 220px;
+#opretBTN {
+    height: 50px;
+    background-color: #F06F63;
+    justify-content: center;
+    margin-left: 50px;
+}
+
+.headerTitle {
+    margin-left: 50px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgb(0,0,0, 0.4);
+}
+
+.modal-content {
+    background-color: #FEFEFE;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 50%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-div2 {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.saveBTN {
+    background-color: #F06F63;
+    color: #fff;
+    padding: 8px 16px;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    float: right;
 }
 
 .content-table-top3 {
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
-    width: 70%;
+    width: 40%;
     border-radius: 5px 5px 0 0;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     margin: 0px auto;
@@ -125,11 +187,7 @@ body {
     background-color: #FEFEFE;
 }
 
-.opretBTN {
-    height: 50px;
-    background-color: #F06F63;
-    justify-content: center;
-}
+
 
 /* -----------------Customer------------------ */
 .customer-box-container{

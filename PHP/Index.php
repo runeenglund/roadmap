@@ -8,12 +8,34 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="../Styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../functions.js" defer></script>
 </head>
 <body>
-    <button class="opretBTN">Opret ny feature</button>
-    <div>
+    <button id="opretBTN">Opret ny feature</button>
+    
+    <div class ="headerTitle">
         <h1>Top 3</h1>
     </div>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">Close</span>
+        <div class="modal-div1">
+          <div class="modal-div2">
+            <div class="modalDivName">
+              <h1>Navn</h1>
+              <input type="text">
+            </div>
+            <div class="modalDivStatus">
+              <h1>Status</h1>
+              <input type="text">
+            </div>
+           <button class="saveBTN">Gem</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <table class="content-table-top3">
         <thead>
           <tr>
@@ -48,6 +70,11 @@
           </tr>
         </tbody>
       </table>
+
+      <div class ="headerTitle">
+        <h1>Top 3</h1>
+      </div>
+
       <table class="content-table">
         <thead>
           <tr>
