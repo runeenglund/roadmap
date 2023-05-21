@@ -38,40 +38,19 @@
 
     <div class="table">
       <table class="content-table-top3">
-          <thead>
-            <tr>
-              <th>Navn</th>
-              <th>Bedømmelse</th>
-              <th>Status</th>
-              <th>Kommentarer</th>
-              <th>Rediger</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Formular</td>
-              <td>2</td>
-              <td>Igangværende</td>
-              <td>1 kommentar</td>
-              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-            </tr>
-            <tr>
-              <td>Dashboard</td>
-              <td>2</td>
-              <td>ventende</td>
-              <td>1 kommentar</td>
-              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-            </tr>
-            <tr>
-              <td>Ændring i menubar</td>
-              <td>2</td>
-              <td>Igangvære</td>
-              <td>1 kommentar</td>
-              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+        <thead>
+          <tr>
+            <th>Navn</th>
+            <th>Bedømmelse</th>
+            <th>Status</th>
+            <th>Kommentarer</th>
+            <th>Rediger</th>
+          </tr>
+        </thead>
+        <tbody id="dataTop3">
+        </tbody>
+      </table>
+    </div>
 
         
         <div class ="headerTitle">
@@ -180,20 +159,41 @@
 </html>
 
 <script>
-  /* ajax call */
-  var ajax = new XMLHttpRequest();
-  var method = "GET";
-  var url = "http://localhost/roadmap/PHP/dbCon/Api.php?action=tasks";
-  var asynchronous = true;
+  /* ajax kald */
+  let ajax = new XMLHttpRequest();
+  let method = "GET";
+  let url = "http://localhost/roadmap/PHP/dbCon/Api.php?action=tasks";
+  let asynchronous = true;
 
   ajax.open (method,url,asynchronous);
-  /* sending request */
+  /* sender request */
   ajax.send();
 
-  /* recieving response from Api.php */
+  /* modtager respons fra Api.php */
   ajax.onreadystatechange = function(){
     if(this.readyState == 4 && this.status ==200) {
       console.log(this.responseText);
+
+      let data = JSON.parse(this.responseText);
+      console.log(data);
+
+      /* html værdier for <tbody> */
+      let html = "";
+
+      /* looper gennem dataen */
+      for (let a = 0; a < data.length; a++)
+      {
+        let navn = data[a].navn;
+        let status = data[a].status;
+        
+        /* appender til html */
+        html += "<tr>";
+          html += "<td>" + navn + "</td>";
+        html += "</tr>";
+      }
+
+      /* erstater <tbody> af <table> */
+      document.getElementById("dataTop3").innerHTML = html;
     }
   }
 </script>
