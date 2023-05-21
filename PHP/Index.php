@@ -178,3 +178,22 @@
       </div>
 </body>
 </html>
+
+<script>
+  /* ajax call */
+  var ajax = new XMLHttpRequest();
+  var method = "GET";
+  var url = "http://localhost/roadmap/PHP/dbCon/Api.php?action=tasks";
+  var asynchronous = true;
+
+  ajax.open (method,url,asynchronous);
+  /* sending request */
+  ajax.send();
+
+  /* recieving response from Api.php */
+  ajax.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status ==200) {
+      console.log(this.responseText);
+    }
+  }
+</script>
