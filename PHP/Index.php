@@ -182,15 +182,14 @@
       for (let i = 0; i < dataTasks.length; i++)
       {
 
-        console.log("hej");
-        let firstName = dataTasks[i].navn;
-        let isStatus = dataTasks[i].status;
+        let Name = dataTasks[i].navn;
+        let Status = dataTasks[i].status;
 
-        console.log(firstName);
         
         /* appender til html */
         html += "<tr>";
-          html += "<td>" + firstName + "</td>";
+          html += "<td>" + Name + "</td>";
+          html += "<td>" + Status + "</td>";
         html += "</tr>";
       }
 
