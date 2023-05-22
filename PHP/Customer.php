@@ -12,6 +12,7 @@
     <h1>Roadmap</h1>
     <p>Ved at klikke ind på funktionerne, kan i vote omkring dem og tilknytte kommentarer.</p>
     <p>OBS! Der kan forekomme ændringer efter jeres voteringer.</p>
+    <div class="customerLine"></div>
     <div id="overlay" onclick="off()">
         <div class="overlay-box">
             <p>teeeeest</p>
