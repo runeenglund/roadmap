@@ -161,39 +161,41 @@
 <script>
   /* ajax kald */
   let ajax = new XMLHttpRequest();
-  let method = "GET";
-  let url = "http://localhost/roadmap/PHP/dbCon/Api.php?action=tasks";
-  let asynchronous = true;
-
-  ajax.open (method,url,asynchronous);
-  /* sender request */
+  ajax.open("GET", "http://localhost/roadmap/PHP/dbCon/Api.php?action=tasks", true);
   ajax.send();
 
   /* modtager respons fra Api.php */
   ajax.onreadystatechange = function(){
-    if(this.readyState == 4 && this.status ==200) {
+    if(this.readyState == 4 && this.status == 200) {
       console.log(this.responseText);
-
       let data = JSON.parse(this.responseText);
-      console.log(data);
+      /* console.log(data); */
 
       /* html værdier for <tbody> */
       let html = "";
+      
+      let dataTasks = data.tasks;
+
+      console.log(dataTasks);
 
       /* looper gennem dataen */
-      for (let a = 0; a < data.length; a++)
+      for (let i = 0; i < dataTasks.length; i++)
       {
-        let navn = data[a].navn;
-        let status = data[a].status;
+
+        console.log("hej");
+        let firstName = dataTasks[i].navn;
+        let isStatus = dataTasks[i].status;
+
+        console.log(firstName);
         
         /* appender til html */
         html += "<tr>";
-          html += "<td>" + navn + "</td>";
+          html += "<td>" + firstName + "</td>";
         html += "</tr>";
       }
 
       /* erstater <tbody> af <table> */
-      document.getElementById("dataTop3").innerHTML = html;
+      document.getElementById("dataTop3").innerHTML += html;
     }
   }
 </script>

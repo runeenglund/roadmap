@@ -18,8 +18,7 @@
     
     // CRUD ********************************
     if($action=='tasks'){
-    $sql = "SELECT * FROM tasks
-    ORDER BY id";
+    $sql = "SELECT * FROM tasks";
     $query = $conn->query($sql);
     $tasks = array();
  
