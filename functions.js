@@ -26,3 +26,6 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+
+//linje mellem boksene ved kunde siden

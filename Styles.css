@@ -249,3 +249,30 @@ body {
     width: 60%;
     height: 60%;
   }
+
+  .customerLine {
+    width: 800px;
+    height: 200px;
+    position: relative;
+  }
+  
+  .customerLine:after {
+      content: '';
+      width: 50%;
+      position: absolute;
+      height: 200px;
+      display: block;
+      border-bottom: 19px solid black;
+      border-radius: 50%;
+      left: 50%;
+  }
+  
+  .customerLine:before {
+      content: '';
+      width: 50%;
+      position: absolute;
+      height: 200px;
+      display: block;
+      border-top: 19px solid black;
+      border-radius: 50%;
+  }
