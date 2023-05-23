@@ -30,8 +30,16 @@
               <h1>Status</h1>
               <input type="text">
             </div>
-           <button class="saveBTN">Gem</button>
+            <div class="modalDivName">
+              <h1>Beskrivelse</h1>
+              <input type="text">
+            </div>
+            <div class="modalDivStatus">
+              <h1>Dato</h1>
+              <input type="text">
+            </div>
           </div>
+          <button class="saveBTN">Gem</button>
         </div>
       </div>
     </div>
@@ -44,9 +52,9 @@
             <th>Bedømmelse</th>
             <th>Status</th>
             <th>Kommentarer</th>
-            <th>Rediger</th>
             <th>Kvartal</th>
             <th>Årstal</th>
+            <th>Rediger</th>
           </tr>
         </thead>
         <tbody id="dataTop3">
@@ -66,9 +74,9 @@
               <th>Bedømmelse</th>
               <th>Status</th>
               <th>Kommentarer</th>
-              <th>Rediger</th>
               <th>Kvartal</th>
               <th>Årstal</th>
+              <th>Rediger</th>
             </tr>
           </thead>
           <tbody>
@@ -193,6 +201,7 @@
         html += "<tr>";
           html += "<td>" + Name + "</td>";
           html += "<td>" + Status + "</td>";
+          html += '<td><i class="fa fa-angle-down" style="font-size:36px"></i></td>';
         html += "</tr>";
       }
 

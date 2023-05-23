@@ -39,7 +39,7 @@ body {
 }
 
 .close {
-    color: #aaa;
+    color: black;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -47,7 +47,7 @@ body {
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: #aaa;
     text-decoration: none;
     cursor: pointer;
 }
@@ -55,6 +55,7 @@ body {
 .modal-div2 {
     display: flex;
     justify-content: space-evenly;
+    height: 425px;
 }
 
 .saveBTN {
@@ -73,7 +74,7 @@ body {
 
 .table {
     width: 900px;
-    height: auto;
+    margin-bottom:100px;
 }
 
 .content-table-top3 {
@@ -202,6 +203,11 @@ body {
 }
 
 @media (max-width: 1050px ) {
+    .modal-div2 {
+        display: flex;
+        justify-content: space-evenly;
+        height: 300px;
+    }
 
     .table {
         width: 300px;
@@ -210,6 +216,10 @@ body {
 }
 
 @media (max-width: 900px ) {
+    .modal-content {
+        height: 43%;
+    }
+
     .content-table-top3 th, .content-table-top3 td {
         padding: 10px 15px;
     }
@@ -228,6 +238,10 @@ body {
 }
 
 @media (max-width: 500px ) {
+    .modal-div2 {
+        height: 523px;
+    }
+
     th {
         display: none;
     }
