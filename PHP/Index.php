@@ -45,6 +45,8 @@
             <th>Status</th>
             <th>Kommentarer</th>
             <th>Rediger</th>
+            <th>Kvartal</th>
+            <th>Årstal</th>
           </tr>
         </thead>
         <tbody id="dataTop3">
@@ -65,6 +67,8 @@
               <th>Status</th>
               <th>Kommentarer</th>
               <th>Rediger</th>
+              <th>Kvartal</th>
+              <th>Årstal</th>
             </tr>
           </thead>
           <tbody>
@@ -184,7 +188,6 @@
 
         let Name = dataTasks[i].navn;
         let Status = dataTasks[i].status;
-
         
         /* appender til html */
         html += "<tr>";
