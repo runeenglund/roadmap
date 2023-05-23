@@ -2,7 +2,7 @@
 
 body {
     background-color: #062B95;
-    padding: 20px;
+    margin: 0;
 }
 
 #opretBTN {
@@ -85,9 +85,6 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     margin: auto 100px;
     height: 100px;
-    /* display: block; */
-    overflow: hidden;
-    overflow-y: scroll;
 }
 
 .content-table-top3 thead tr {
@@ -100,20 +97,6 @@ body {
 .content-table-top3 th,
 .content-table-top3 td {
     padding: 10px 100px;
-}
-
-.content-table-top3::-webkit-scrollbar {
-    width: 20px;
-}
-
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 30px #FEFEFE;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #F06F63;
-  border-radius: 10px;
 }
 
 .content-table-top3 tbody tr {
@@ -142,9 +125,6 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     margin:  auto 100px;
     height: 100px;
-    /* display: block; */
-    overflow: hidden;
-    overflow-y: scroll;
 }
 
 .content-table thead tr {
@@ -157,20 +137,6 @@ body {
 .content-table th,
 .content-table td {
     padding: 10px 100px;
-}
-
-.content-table::-webkit-scrollbar {
-    width: 20px;
-}
-
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 30px #FEFEFE;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #F06F63;
-  border-radius: 10px;
 }
 
 .content-table tbody tr {
@@ -197,12 +163,63 @@ body {
     }
 
     td {
-        display: block;
+        display: grid;
+        grid-template-columns: 20ch auto;
         padding: 0.5rem 1rem;
     }
 
+
+    td:first-child {
+        padding-top: 1rem;
+    }
+
+    td:last-child {
+        padding-top: 1rem;
+    }
+
+    td:nth-of-type(1)::before {
+        content: "Navn: ";
+        font-weight: 700;
+    }
+
+    td:nth-of-type(2)::before {
+        content: "Bedømmelse: ";
+        font-weight: 700;
+    }
+
+    td:nth-of-type(3)::before {
+        content: "Status: ";
+        font-weight: 700;
+    }
+
+    td:nth-of-type(4)::before {
+        content: "Kommentarer: ";
+        font-weight: 700;
+    }
+
+    td:nth-of-type(5)::before {
+        content: "navn ";
+        font-weight: 700;
+    }
+
+    .content-table-top3 th, .content-table-top3 td {
+        padding: 10px 50px;
+    }
+
+    .content-table-top3 {
+        width: auto;
+    }
+
+     .content-table th, .content-table td {
+        padding: 10px 50px;
+    }
+
+    .content-table {
+        width: auto;
+    }
+
     .table {
-        width: 600px;
+        width: 800px;
     }
 }
 
