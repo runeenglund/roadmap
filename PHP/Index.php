@@ -20,27 +20,29 @@
     <div id="myModal" class="modal">
       <div class="modal-content">
         <span class="close">Close</span>
-        <div class="modal-div1">
-          <div class="modal-div2">
-            <div class="modalDivName">
-              <h2>Navn:</h2>
-              <input type="text" id="name" name="name">
+        <form action="">
+          <div class="modal-div1">
+            <div class="modal-div2">
+              <div class="modalDivName">
+                <h2>Navn:</h2>
+                  <input type="text" id="name" name="name">
+                </div>
+                <div class="modalDivStatus">
+                  <h2>Status:</h2>
+                  <input type="text" id="status" name="status">
+                </div>
+                <div class="modalDivDesc">
+                  <h2>Beskrivelse:</h2>
+                  <textarea name="desc" id="description" cols="30" rows="5"></textarea>
+                </div>
+              <div class="modalDivDate">
+                <h2>Dato:</h2>
+                <input type="text" id="date" name="date">
+              </div>
             </div>
-            <div class="modalDivStatus">
-              <h2>Status:</h2>
-              <input type="text" id="status" name="status">
-            </div>
-            <div class="modalDivDesc">
-              <h2>Beskrivelse:</h2>
-              <textarea name="desc" id="description" cols="30" rows="5"></textarea>
-            </div>
-            <div class="modalDivDate">
-              <h2>Dato:</h2>
-              <input type="text" id="date" name="date">
-            </div>
+            <button type="submit" class="saveBTN">Gem</button>
           </div>
-          <button type="submit" class="saveBTN">Gem</button>
-        </div>
+        </form>
       </div>
     </div>
 
@@ -212,12 +214,20 @@
 
 
   /* ajax POST kald */
-  const formData = new formData();
+  const form = document.querySelector('form');
 
-  formData.append();
+  form.addEventListener('submit',(e) => {
+    e.preventDefault();  
 
+    let formData = new FormData(form);
 
-  ajax.open("POST", "http://localhost/roadmap/PHP/dbCon/Api.php?action=tasks", true);
-  ajax.send(formData);
+    for (item of formData) {
+      console.log(item[0],item[1]);
+    }
+
+  });
+
+  /* ajax.open("POST", "http://localhost/roadmap/PHP/dbCon/Api.php?action=tasks", true);
+  ajax.send(formData); */
 
 </script>
