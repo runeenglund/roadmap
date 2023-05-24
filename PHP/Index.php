@@ -23,23 +23,23 @@
         <div class="modal-div1">
           <div class="modal-div2">
             <div class="modalDivName">
-              <h1>Navn</h1>
-              <input type="text">
+              <h2>Navn:</h2>
+              <input type="text" id="name" name="name">
             </div>
             <div class="modalDivStatus">
-              <h1>Status</h1>
-              <input type="text">
+              <h2>Status:</h2>
+              <input type="text" id="status" name="status">
             </div>
-            <div class="modalDivName">
-              <h1>Beskrivelse</h1>
-              <input type="text">
+            <div class="modalDivDesc">
+              <h2>Beskrivelse:</h2>
+              <textarea name="desc" id="description" cols="30" rows="5"></textarea>
             </div>
-            <div class="modalDivStatus">
-              <h1>Dato</h1>
-              <input type="text">
+            <div class="modalDivDate">
+              <h2>Dato:</h2>
+              <input type="text" id="date" name="date">
             </div>
           </div>
-          <button class="saveBTN">Gem</button>
+          <button type="submit" class="saveBTN">Gem</button>
         </div>
       </div>
     </div>
@@ -171,7 +171,7 @@
 </html>
 
 <script>
-  /* ajax kald */
+  /* ajax GET kald */
   let ajax = new XMLHttpRequest();
   ajax.open("GET", "http://localhost/roadmap/PHP/dbCon/Api.php?action=tasks", true);
   ajax.send();
@@ -209,4 +209,15 @@
       document.getElementById("dataTop3").innerHTML += html;
     }
   }
+
+
+  /* ajax POST kald */
+  const formData = new formData();
+
+  formData.append();
+
+
+  ajax.open("POST", "http://localhost/roadmap/PHP/dbCon/Api.php?action=tasks", true);
+  ajax.send(formData);
+
 </script>
