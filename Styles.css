@@ -313,6 +313,7 @@ body {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
+    padding-top: 5%;
 }
 
 .customer-box{
@@ -364,29 +365,11 @@ body {
     height: 60%;
   }
 
-  .customerLine {
-    width: 800px;
-    height: 200px;
-    position: relative;
-  }
-  
-  .customerLine:after {
-      content: '';
-      width: 50%;
-      position: absolute;
-      height: 200px;
-      display: block;
-      border-bottom: 19px solid black;
-      border-radius: 50%;
-      left: 50%;
-  }
-  
-  .customerLine:before {
-      content: '';
-      width: 50%;
-      position: absolute;
-      height: 200px;
-      display: block;
-      border-top: 19px solid black;
-      border-radius: 50%;
+  .canvass{
+    color: white;
+    background: rgb(73, 73, 73);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
   }

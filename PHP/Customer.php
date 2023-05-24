@@ -12,12 +12,12 @@
     <h1>Roadmap</h1>
     <p>Ved at klikke ind på funktionerne, kan i vote omkring dem og tilknytte kommentarer.</p>
     <p>OBS! Der kan forekomme ændringer efter jeres voteringer.</p>
-    <div class="customerLine"></div>
     <div id="overlay" onclick="off()">
         <div class="overlay-box">
             <p>teeeeest</p>
         </div>
     </div>
+    <canvas class="canvass"></canvas>
     <div class="customer-box-container">
         <div class="customer-box">
             <h2>overskrift1</h2>
@@ -44,5 +44,11 @@
             </div>
         </div>
     </div>
+    <script>let c = document.getElementById("myCanvas");
+let ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.moveTo(20, 20);
+ctx.bezierCurveTo(20, 100, 200, 100, 200, 20);
+ctx.stroke();</script>
 </body>
 </html>

@@ -29,3 +29,9 @@ window.onclick = function(event) {
 
 
 //linje mellem boksene ved kunde siden
+let c = document.getElementById("myCanvas");
+let ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.moveTo(20, 20);
+ctx.bezierCurveTo(20, 100, 200, 100, 200, 20);
+ctx.stroke();
