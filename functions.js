@@ -29,7 +29,7 @@ window.onclick = function(event) {
 
 
 //linje mellem boksene ved kunde siden
-let c = document.getElementById("myCanvas");
+let c = document.getElementById("canvass");
 let ctx = c.getContext("2d");
 ctx.beginPath();
 ctx.moveTo(20, 20);

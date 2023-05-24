@@ -365,9 +365,8 @@ body {
     height: 60%;
   }
 
-  .canvass{
-    color: white;
-    background: rgb(73, 73, 73);
+  #canvass{
+    background: #1a1a1a;
     width: 100%;
     height: 100%;
     position: absolute;

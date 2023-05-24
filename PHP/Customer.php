@@ -17,7 +17,7 @@
             <p>teeeeest</p>
         </div>
     </div>
-    <canvas class="canvass"></canvas>
+    <canvas id="canvass"></canvas>
     <div class="customer-box-container">
         <div class="customer-box">
             <h2>overskrift1</h2>
@@ -96,7 +96,7 @@
             </div>
         </div>
     </div>
-    <script>let c = document.getElementById("myCanvas");
+    <script>let c = document.getElementById("canvass");
 let ctx = c.getContext("2d");
 ctx.beginPath();
 ctx.moveTo(20, 20);
