@@ -25,19 +25,19 @@
             <div class="modal-div2">
               <div class="modalDivName">
                 <h2>Navn:</h2>
-                  <input type="text" id="name" name="name">
+                  <input type="text" id="name" name="navn">
                 </div>
                 <div class="modalDivStatus">
                   <h2>Status:</h2>
-                  <input type="text" id="status" name="status">
+                  <input type="text" id="status" name="taskStatus">
                 </div>
                 <div class="modalDivDesc">
                   <h2>Beskrivelse:</h2>
-                  <textarea name="desc" id="description" cols="30" rows="5"></textarea>
+                  <textarea name="beskrivelse" id="description" cols="30" rows="5"></textarea>
                 </div>
               <div class="modalDivDate">
                 <h2>Dato:</h2>
-                <input type="text" id="date" name="date">
+                <input type="text" id="date" name="dato">
               </div>
             </div>
             <button type="submit" class="saveBTN">Gem</button>
@@ -172,7 +172,7 @@
 </body>
 </html>
 
-<script>
+<script text="javascript">
   /* ajax GET kald */
   let ajax = new XMLHttpRequest();
   ajax.open("GET", "http://localhost/roadmap/PHP/dbCon/Api.php?action=tasks", true);
@@ -197,7 +197,7 @@
       {
 
         let Name = dataTasks[i].navn;
-        let Status = dataTasks[i].status;
+        let Status = dataTasks[i].taskStatus;
         
         /* appender til html */
         html += "<tr>";
@@ -221,13 +221,35 @@
 
     let formData = new FormData(form);
 
+    let res = Object.fromEntries(formData);
+    let payload = JSON.stringify(res);
+    console.log(payload);
+
     for (item of formData) {
       console.log(item[0],item[1]);
     }
 
-  });
+    fetch('http://localhost/roadmap/PHP/dbCon/Api.php?action=addtasks', {
+      method:'post',
+      body: payload,
+      headers: {
+        'Accept': 'application/json',
+        'content-Type': 'application/json'
+      }
+    })
+    .then((response) => {
+      return response.json()
+    })
+    
+    .then((res) => {
+      if (res.status === 201) {
+        console.log("Post successfully created!")
+      }
+    })
+      
+    .catch((error) => {
+      console.log(error)
+    })
 
-  /* ajax.open("POST", "http://localhost/roadmap/PHP/dbCon/Api.php?action=tasks", true);
-  ajax.send(formData); */
-
+  });  
 </script>

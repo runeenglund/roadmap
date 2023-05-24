@@ -30,33 +30,34 @@
     }
     
     if($action=='addtasks'){
-        $navn = $_POST['navn'];
-        $bedømmelse = $_POST['bedømmelse'];
-        $status = $_POST['status'];
-        $kommentar = $_POST['kommentar'];
+        $navn = $_POST["navn"] ?? null;
+        $taskStatus = $_POST["taskStatus"] ?? null;
+        $bedømmelse = $_POST['bedømmelse'] ?? null;
+        $kommentar = $_POST['kommentar'] ?? null;
      
         if($navn==''){
             $out['error']=true;
             $out['message']='Add task Failed. navn Empty.';
         }
+        elseif($taskStatus==''){
+            $out['error']=true;
+            $out['message']='Add task Failed. status Empty.';
+        }
         elseif($bedømmelse==''){
             $out['error']=true;
             $out['message']='Add task Failed. bedømmelse Empty.';
         }
-        elseif($status==''){
-            $out['error']=true;
-            $out['message']='Add task Failed. status Empty.';
-        }
+        
         elseif($kommentar==''){
             $out['error']=true;
             $out['message']='Add bod Failed. kommentar Empty.';
         }
         else{
-            $sql="INSERT INTO tasks ( navn, bedømmelse, status, kommentar) VALUES ('$navn', '$bedømmelse', '$estatus', '$kommentar')";
+            $sql="INSERT INTO tasks ( navn, taskStatus, bedømmelse, kommentar) VALUES ('$navn', '$taskStatus','$bedømmelse','$kommentar')";
             $query=$conn->query($sql);
      
             if($query){
-                $out['message']='Rask Successfully Added';
+                $out['message']='Task Successfully Added';
             }
             else{
                 $out['error']=true;
