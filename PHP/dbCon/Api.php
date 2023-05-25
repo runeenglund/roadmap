@@ -27,44 +27,31 @@
     }
  
     $out['tasks'] = $tasks;
+
+    echo json_encode($out);
     }
     
     if($action=='addtasks'){
-        $navn = $_POST["navn"] ?? null;
-        $taskStatus = $_POST["taskStatus"] ?? null;
-        $bedømmelse = $_POST['bedømmelse'] ?? null;
-        $kommentar = $_POST['kommentar'] ?? null;
+       /*  $navn = $_POST["navn"];
+        $taskStatus = $_POST["taskStatus"]; */
+       /*  $bedømmelse = $_POST['bedømmelse'] ?? null;
+        $kommentar = $_POST['kommentar'] ?? null; */
      
-        if($navn==''){
-            $out['error']=true;
-            $out['message']='Add task Failed. navn Empty.';
+        $sql="INSERT INTO tasks (navn, taskStatus) VALUES (?, ?)";
+       
+        $stmt = mysqli_stmt_init($conn);
+
+        if( ! mysqli_stmt_prepare($stmt, $sql)) {
+            die(mysqli_error($conn));
+
         }
-        elseif($taskStatus==''){
-            $out['error']=true;
-            $out['message']='Add task Failed. status Empty.';
-        }
-        elseif($bedømmelse==''){
-            $out['error']=true;
-            $out['message']='Add task Failed. bedømmelse Empty.';
-        }
+
+        mysqli_stmt_bind_param($stmt, "si", $navn, $taskStatus);
+        mysqli_stmt_execute($stmt);
         
-        elseif($kommentar==''){
-            $out['error']=true;
-            $out['message']='Add bod Failed. kommentar Empty.';
-        }
-        else{
-            $sql="INSERT INTO tasks ( navn, taskStatus, bedømmelse, kommentar) VALUES ('$navn', '$taskStatus','$bedømmelse','$kommentar')";
-            $query=$conn->query($sql);
-     
-            if($query){
-                $out['message']='Task Successfully Added';
-            }
-            else{
-                $out['error']=true;
-                $out['message']='Error in Adding Occured';
-            }
-    
-        }
+        echo "task uploaded";
+
+       /*  $query=$conn->query($sql); */
     }
     
     if($action=='updatetasks'){
@@ -97,7 +84,6 @@
     $conn->close();
      
     header("Content-type: application/json");
-    echo json_encode($out);
     die();
   
 ?>

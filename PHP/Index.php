@@ -202,7 +202,11 @@
         /* appender til html */
         html += "<tr>";
           html += "<td>" + Name + "</td>";
+          html += "<td></td>";
           html += "<td>" + Status + "</td>";
+          html += "<td></td>";
+          html += "<td></td>";
+          html += "<td></td>";
           html += '<td><i class="fa fa-angle-down" style="font-size:36px"></i></td>';
         html += "</tr>";
       }
@@ -225,9 +229,9 @@
     let payload = JSON.stringify(res);
     console.log(payload);
 
-    for (item of formData) {
+   /*  for (item of formData) {
       console.log(item[0],item[1]);
-    }
+    } */
 
     fetch('http://localhost/roadmap/PHP/dbCon/Api.php?action=addtasks', {
       method:'post',
