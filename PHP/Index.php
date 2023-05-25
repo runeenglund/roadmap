@@ -227,14 +227,17 @@
 
     let res = Object.fromEntries(formData);
     let payload = JSON.stringify(res);
+
+    let formDataJSON = JSON.stringify(formData);
     console.log(payload);
+    console.log(formDataJSON);
 
    /*  for (item of formData) {
       console.log(item[0],item[1]);
     } */
 
     fetch('http://localhost/roadmap/PHP/dbCon/Api.php?action=addtasks', {
-      method:'post',
+      method:'POST',
       body: payload,
       headers: {
         'Accept': 'application/json',

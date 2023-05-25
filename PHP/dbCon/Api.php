@@ -32,10 +32,14 @@
     }
     
     if($action=='addtasks'){
-       /*  $navn = $_POST["navn"];
+    /*     $navn = $_POST["navn"];
         $taskStatus = $_POST["taskStatus"]; */
        /*  $bedømmelse = $_POST['bedømmelse'] ?? null;
         $kommentar = $_POST['kommentar'] ?? null; */
+
+        if(mysqli_connect_errno()){
+            die("connection error: ". mysqli_connect_errno());
+        }
      
         $sql="INSERT INTO tasks (navn, taskStatus) VALUES (?, ?)";
        
@@ -48,8 +52,6 @@
 
         mysqli_stmt_bind_param($stmt, "si", $navn, $taskStatus);
         mysqli_stmt_execute($stmt);
-        
-        echo "task uploaded";
 
        /*  $query=$conn->query($sql); */
     }
