@@ -20,15 +20,15 @@
         </div>
     </div>
     
-    <svg id="svgLine">
-        <path d="M 225 250 q 350 -150 700 0" stroke="#F06F63" stroke-width="5" fill="none" />
-        <path d="M 750 150 q 350 150 700 0" stroke="#F06F63" stroke-width="5" fill="none" />
-        <path d="M 1550 525 q 150 -200 0 -400" stroke="#F06F63" stroke-width="5" fill="none" /> 
-        <path d="M 750 550 q 350 -150 700 0" stroke="#F06F63" stroke-width="5" fill="none" />
-        <path d="M 225 400 q 350 150 700 0" stroke="#F06F63" stroke-width="5" fill="none" />
-        <path d="M 125 825 q -200 -150 0 -400" stroke="#F06F63" stroke-width="5" fill="none" /> 
-        <path d="M 225 850 q 350 -150 700 0" stroke="#F06F63" stroke-width="5" fill="none" />
-        <path d="M 750 700 q 350 150 700 0" stroke="#F06F63" stroke-width="5" fill="none" />
+    <svg id="svg-line-box" viewBox="100" preserveAspectRatio="xMidYMid meet">
+        <path d="M 225 250 q 350 -150 700 0" stroke="#F06F63" stroke-width="5" fill="none" /> 
+        <path d="M 750 150 q 350 150 700 0" stroke="#F06F63" stroke-width="5" fill="none" vector-effect="non-scaling-stroke"/> 
+        <path d="M 1550 525 q 150 -200 0 -400" stroke="#F06F63" stroke-width="5" fill="none" vector-effect="non-scaling-stroke"/> 
+        <path d="M 750 550 q 350 -150 700 0" stroke="#F06F63" stroke-width="5" fill="none" vector-effect="non-scaling-stroke"/>
+        <path d="M 225 400 q 350 150 700 0" stroke="#F06F63" stroke-width="5" fill="none" vector-effect="non-scaling-stroke"/>
+        <path d="M 125 825 q -200 -150 0 -400" stroke="#F06F63" stroke-width="5" fill="none" vector-effect="non-scaling-stroke"/> 
+        <path d="M 225 850 q 350 -150 700 0" stroke="#F06F63" stroke-width="5" fill="none" vector-effect="non-scaling-stroke"/>
+        <path d="M 750 700 q 350 150 700 0" stroke="#F06F63" stroke-width="5" fill="none" vector-effect="non-scaling-stroke"/>
         Din browser understøtter ikke inline SVG.
     </svg> 
 
