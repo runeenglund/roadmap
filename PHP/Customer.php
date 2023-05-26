@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kunder</title>
     <link rel="stylesheet" type="text/css" href="../Styles.css" />
-    <script src="../functions.js" defer></script>
 </head>
 <body>
     <h1>Roadmap</h1>
@@ -108,5 +107,15 @@
             </div>
         </div>
     </div>
+    <script>
+        //overlay on/off
+        function on() {
+        document.getElementById("overlay").style.display = "block";
+        }
+
+        function off() {
+        document.getElementById("overlay").style.display = "none";
+        }
+    </script>
 </body>
 </html>
