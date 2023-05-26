@@ -8,7 +8,6 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="../Styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="../functions.js" defer></script>
 </head>
 <body>
     <button id="opretBTN">Opret ny feature</button>
@@ -20,7 +19,7 @@
     <div id="myModal" class="modal">
       <div class="modal-content">
         <span class="close">Close</span>
-        <form action="">
+        <form id="form">
           <div class="modal-div1">
             <div class="modal-div2">
               <div class="modalDivName">
@@ -218,17 +217,18 @@
       for (let i = 0; i < dataTasks.length; i++)
       {
 
-        let Name = dataTasks[i].navn;
-        let Status = dataTasks[i].taskStatus;
+        let name = dataTasks[i].navn;
+        let status = dataTasks[i].taskStatus;
+        let year = dataTasks[i].årstal;
         
         /* appender til html */
         html += "<tr>";
-          html += "<td>" + Name + "</td>";
+          html += "<td>" + name + "</td>";
           html += "<td></td>";
-          html += "<td>" + Status + "</td>";
+          html += "<td>" + status + "</td>";
+          html += '<td><i class="fa fa-comments" aria-hidden="true" style="font-size:20px"></i></td>';
           html += "<td></td>";
-          html += "<td></td>";
-          html += "<td></td>";
+          html += "<td>" + year + "</td>";
           html += '<td><i class="fa fa-angle-down" style="font-size:36px"></i></td>';
         html += "</tr>";
       }
@@ -240,7 +240,7 @@
 
 
   /* ajax POST kald */
-  const form = document.querySelector('form');
+  let form = document.querySelector('#form');
 
   form.addEventListener('submit',(e) => {
     e.preventDefault();  
@@ -249,14 +249,12 @@
 
     let res = Object.fromEntries(formData);
     let payload = JSON.stringify(res);
-
-    let formDataJSON = JSON.stringify(formData);
+    console.log(res);
     console.log(payload);
-    console.log(formDataJSON);
 
-   /*  for (item of formData) {
+    for (item of formData) {
       console.log(item[0],item[1]);
-    } */
+    }
 
     fetch('http://localhost/roadmap/PHP/dbCon/Api.php?action=addtasks', {
       method:'POST',
@@ -266,12 +264,10 @@
         'content-Type': 'application/json'
       }
     })
-    .then((response) => {
-      return response.json()
-    })
+    .then((res) => res.json() )
     
     .then((res) => {
-      if (res.status === 201) {
+      if (res.status === 200) {
         console.log("Post successfully created!")
       }
     })
