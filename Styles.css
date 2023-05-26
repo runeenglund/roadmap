@@ -236,31 +236,31 @@ body {
     cursor: pointer;
   }
 
-  .overlay-box{
-    background-color: #2A5EF6;
-    color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    width: 60%;
-    height: 60%;
-  }
+.overlay-box{
+background-color: #2A5EF6;
+color: white;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+-ms-transform: translate(-50%,-50%);
+width: 60%;
+height: 60%;
+}
 
-#svgLine{
+#svg-line-box{
     position: absolute;
-    z-index: -1;
+    z-index: 10;
     width: 100%;
     height: 100%;
 }
 
-#svgLine path{
+/*#svgLine path{
     d: path("M 225 250 q 350 -150 700 0 M 750 150 q 350 150 700 0 M 1550 525 q 150 -200 0 -400 M 750 550 q 350 -150 700 0 M 225 400 q 350 150 700 0 M 125 825 q -200 -150 0 -400 M 225 850 q 350 -150 700 0 M 750 700 q 350 150 700 0"); 
     stroke:"#F06F63";
     stroke-width: "5";
     fill: none; 
-}
+}*/
 
 
 /* -----------------Media query------------------ */
