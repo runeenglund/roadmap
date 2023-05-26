@@ -8,9 +8,12 @@
     <link rel="stylesheet" type="text/css" href="../Styles.css" />
 </head>
 <body>
-    <h1>Roadmap</h1>
-    <p>Ved at klikke ind på funktionerne, kan i vote omkring dem og tilknytte kommentarer.</p>
-    <p>OBS! Der kan forekomme ændringer efter jeres voteringer.</p>
+    <div class="topCustomer">
+        <h1>Roadmap</h1>
+        <p>Ved at klikke ind på funktionerne, kan i vote omkring dem og tilknytte kommentarer.</p>
+        <p>OBS! Der kan forekomme ændringer efter jeres voteringer.</p>
+        <button id="workerBTN" onclick="window.location.href='index.php'">Medarbejder</button>
+    </div>
     <div id="overlay" onclick="off()">
         <div class="overlay-box">
             <p>teeeeest</p>

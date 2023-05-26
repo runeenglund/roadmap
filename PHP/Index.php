@@ -12,7 +12,7 @@
 </head>
 <body>
     <button id="opretBTN">Opret ny feature</button>
-    
+    <button id="switchBTN" onclick="window.location.href='customer.php'">Se hvad kunden ser</button>
     <div class ="headerTitle">
         <h1>Top 3</h1>
     </div>
