@@ -30,6 +30,21 @@
 
     echo json_encode($out);
     }
+
+    
+    if($action=='jointasks'){
+        $sql = "SELECT tasks.navn, tasks.taskStatus, bedømmelse.bedømmelse, kommentar.kommentar, tasks.årstal FROM tasks, kommentar, bedømmelse WHERE tasks.bedømmelse_id = bedømmelse.bedømmelse_id AND tasks.kommentar_id = kommentar.kommentar_id";
+        $query = $conn->query($sql);
+        $tasks = array();
+ 
+        while($row = $query->fetch_array()){
+            array_push($tasks, $row);
+        }
+    
+        $out['tasks'] = $tasks;
+
+        echo json_encode($out);
+    }
     
     if($action=='addtasks'){
         /* $navn = $_POST['navn'];
@@ -58,6 +73,7 @@
         $stmt->execute();
         $stmt->close();
 
+        
         /* var_dump($navn, $taskStatus ,$beskrivelse, $dato); */
 
        /*  $query=$conn->query($sql); */
@@ -92,7 +108,7 @@
     //Close connection
     $conn->close();
      
-    header("Content-type: application/json");
+    /* header("Content-type: application/json"); */
     die();
   
 ?>

@@ -196,7 +196,7 @@
 
   /* ajax GET kald */
   let ajax = new XMLHttpRequest();
-  ajax.open("GET", "http://localhost/roadmap/PHP/dbCon/Api.php?action=tasks", true);
+  ajax.open("GET", "http://localhost/roadmap/PHP/dbCon/Api.php?action=jointasks", true);
   ajax.send();
 
   /* modtager respons fra Api.php */
@@ -220,13 +220,14 @@
         let name = dataTasks[i].navn;
         let status = dataTasks[i].taskStatus;
         let year = dataTasks[i].årstal;
+        let comment = dataTasks[i].kommentar;
         
         /* appender til html */
         html += "<tr>";
           html += "<td>" + name + "</td>";
           html += "<td></td>";
           html += "<td>" + status + "</td>";
-          html += '<td><i class="fa fa-comments" aria-hidden="true" style="font-size:20px"></i></td>';
+          html += '<td><i class="fa fa-comments" aria-hidden="true" style="font-size:20px"></i>' + comment + '</td>';
           html += "<td></td>";
           html += "<td>" + year + "</td>";
           html += '<td><i class="fa fa-angle-down" style="font-size:36px"></i></td>';
@@ -248,8 +249,8 @@
     let formData = new FormData(form);
 
     let res = Object.fromEntries(formData);
-    let payload = JSON.stringify(formData);
-    console.log(res);
+    let payload = JSON.stringify(form);
+    /* console.log(res); */
     console.log(payload);
 
     for (item of formData) {
