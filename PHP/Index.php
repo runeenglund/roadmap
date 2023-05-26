@@ -219,10 +219,28 @@
 
         let name = dataTasks[i].navn;
         let status = dataTasks[i].taskStatus;
-        let year = dataTasks[i].årstal;
+        let date = dataTasks[i].dato;
         let comment = dataTasks[i].kommentar;
 
         let statusCurrentWaiting = (status == 1) ? "Igangværende":"Ventende";
+
+        let dateSplit = date.split("-");
+        let year = dateSplit[0];
+        let month = dateSplit[1];
+        let day = dateSplit[2];
+
+        let findQuarter = (month1 = 1) => {
+          if (month1 <= 3) {
+              return 1
+          } else if (month1 <= 6) {
+              return 2
+          } else if (month1 <= 9) {
+              return 3
+          } else if (month1 <= 12) {
+              return 4
+          }
+        }
+        console.log(findQuarter(month));
 
         
         /* appender til html */
@@ -231,7 +249,7 @@
           html += "<td></td>";
           html += "<td>" + statusCurrentWaiting + "</td>";
           html += '<td><i class="fa fa-comments" aria-hidden="true" style="font-size:20px"></i>' + comment + '</td>';
-          html += "<td></td>";
+          html += "<td>" + findQuarter(month); + "</td>";
           html += "<td>" + year + "</td>";
           html += '<td><i class="fa fa-angle-down" style="font-size:36px"></i></td>';
         html += "</tr>";
