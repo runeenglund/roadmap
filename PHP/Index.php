@@ -36,7 +36,7 @@
                 </div>
               <div class="modalDivDate">
                 <h2>Dato:</h2>
-                <input type="text" id="date" name="dato">
+                <input type="text" id="year" name="årstal">
               </div>
             </div>
             <button type="submit" class="saveBTN">Gem</button>
@@ -248,7 +248,7 @@
     let formData = new FormData(form);
 
     let res = Object.fromEntries(formData);
-    let payload = JSON.stringify(res);
+    let payload = JSON.stringify(formData);
     console.log(res);
     console.log(payload);
 

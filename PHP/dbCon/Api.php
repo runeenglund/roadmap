@@ -44,7 +44,7 @@
             die("connection error: ". mysqli_connect_errno());
         }
      
-        $stmt = $conn->prepare("INSERT INTO tasks (navn, taskStatus, beskrivelse, dato) VALUES (?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO tasks (navn, taskStatus, beskrivelse, årstal) VALUES (?, ?, ?, ?)");
        
        /*  $stmt = mysqli_stmt_init($conn); */
 
@@ -53,7 +53,7 @@
 
         } */
 
-        $stmt->bind_param( "sisi", $navn, $taskStatus, $beskrivelse, $dato);
+        $stmt->bind_param( "sisi", $navn, $taskStatus, $beskrivelse, $årstal);
         /* mysqli_stmt_execute($stmt) */;
         $stmt->execute();
         $stmt->close();
