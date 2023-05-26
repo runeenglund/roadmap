@@ -221,12 +221,13 @@
         let status = dataTasks[i].taskStatus;
         let year = dataTasks[i].årstal;
         let comment = dataTasks[i].kommentar;
+
         
         /* appender til html */
         html += "<tr>";
           html += "<td>" + name + "</td>";
           html += "<td></td>";
-          html += "<td>" + status + "</td>";
+          html += "<td>" + Boolean(status[i]); + "</td>";
           html += '<td><i class="fa fa-comments" aria-hidden="true" style="font-size:20px"></i>' + comment + '</td>';
           html += "<td></td>";
           html += "<td>" + year + "</td>";
