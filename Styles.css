@@ -215,10 +215,11 @@ body {
     height: 50px;
     background-color: #F06F63;
     justify-content: center;
-    float: right;
     color: #fff;
     font-weight: bold;
     cursor: pointer;
+    float: right;
+    margin-top: -10%;
 }
 
 #overlay {
