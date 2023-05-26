@@ -218,6 +218,7 @@
       {
 
         let name = dataTasks[i].navn;
+        let eval = dataTasks[i].bedømmelse;
         let status = dataTasks[i].taskStatus;
         let date = dataTasks[i].dato;
         let comment = dataTasks[i].kommentar;
@@ -240,13 +241,13 @@
               return 4
           }
         }
-        console.log(findQuarter(month));
+        /* console.log(findQuarter(month)); */
 
         
         /* appender til html */
         html += "<tr>";
           html += "<td>" + name + "</td>";
-          html += "<td></td>";
+          html += "<td>" + eval + "</td>";
           html += "<td>" + statusCurrentWaiting + "</td>";
           html += '<td><i class="fa fa-comments" aria-hidden="true" style="font-size:20px"></i>' + comment + '</td>';
           html += "<td>" + findQuarter(month); + "</td>";

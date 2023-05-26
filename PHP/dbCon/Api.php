@@ -33,7 +33,9 @@
 
     
     if($action=='jointasks'){
-        $sql = "SELECT tasks.navn, tasks.taskStatus, bedømmelse.bedømmelse, kommentar.kommentar, tasks.dato FROM tasks, kommentar, bedømmelse WHERE tasks.bedømmelse_id = bedømmelse.bedømmelse_id AND tasks.kommentar_id = kommentar.kommentar_id";
+        $sql = "SELECT tasks.navn, tasks.taskStatus, kommentar.kommentar, tasks.dato, bedømmelse.bedømmelse_id, bedømmelse.bedømmelse
+         FROM tasks, kommentar, bedømmelse WHERE tasks.kommentar_id = kommentar.kommentar_id
+         AND tasks.bedømmelse_id = bedømmelse.bedømmelse_id";
         $query = $conn->query($sql);
         $tasks = array();
  
