@@ -173,6 +173,28 @@
 </html>
 
 <script text="javascript">
+
+  /* opret nu opgave */
+
+  let modal = document.getElementById("myModal");
+  let btn = document.getElementById("opretBTN");
+  let span = document.getElementsByClassName("close")[0];
+
+  btn.onclick = function() {
+  modal.style.display = "block";
+  }
+
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    if (event.target == modal) {  
+      modal.style.display = "none";
+    }
+  }
+
+
   /* ajax GET kald */
   let ajax = new XMLHttpRequest();
   ajax.open("GET", "http://localhost/roadmap/PHP/dbCon/Api.php?action=tasks", true);
