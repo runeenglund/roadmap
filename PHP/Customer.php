@@ -17,7 +17,19 @@
             <p>teeeeest</p>
         </div>
     </div>
-    <canvas id="canvass"></canvas>
+    
+    <svg id="svgLine">
+        <path d="M 225 250 q 350 -150 700 0" stroke="#F06F63" stroke-width="5" fill="none" />
+        <path d="M 750 150 q 350 150 700 0" stroke="#F06F63" stroke-width="5" fill="none" />
+        <path d="M 1550 525 q 150 -200 0 -400" stroke="#F06F63" stroke-width="5" fill="none" /> 
+        <path d="M 750 550 q 350 -150 700 0" stroke="#F06F63" stroke-width="5" fill="none" />
+        <path d="M 225 400 q 350 150 700 0" stroke="#F06F63" stroke-width="5" fill="none" />
+        <path d="M 125 825 q -200 -150 0 -400" stroke="#F06F63" stroke-width="5" fill="none" /> 
+        <path d="M 225 850 q 350 -150 700 0" stroke="#F06F63" stroke-width="5" fill="none" />
+        <path d="M 750 700 q 350 150 700 0" stroke="#F06F63" stroke-width="5" fill="none" />
+        Din browser understøtter ikke inline SVG.
+    </svg> 
+
     <div class="customer-box-container">
         <div class="customer-box">
             <h2>overskrift1</h2>
@@ -96,11 +108,5 @@
             </div>
         </div>
     </div>
-    <script>let c = document.getElementById("canvass");
-let ctx = c.getContext("2d");
-ctx.beginPath();
-ctx.moveTo(20, 20);
-ctx.bezierCurveTo(20, 100, 200, 100, 200, 20);
-ctx.stroke();</script>
 </body>
 </html>
