@@ -167,25 +167,27 @@
           html += '<td><i class="fa fa-comments" aria-hidden="true" style="font-size:20px"></i>' + comment + '</td>';
           html += "<td>" + findQuarter(month); + "</td>";
           html += "<td>" + year + "</td>";
-          html += '<td><i class="fa fa-angle-down" style="font-size:36px" id="dropdownEditArrow"></i></td>';
+          html += '<td><span><i class="fa fa-angle-down" style="font-size:36px" id="dropdownEditArrow"></i></span></td>';
         html += "</tr>";
         html += '<div class="dropdownEditDiv"></div>';
+        
+        let dropdownEditBox = document.querySelectorAll(".dropdownEditDiv");
+        let dropdownEditArrow = document.getElementById("dropdownEditArrow");
+
+        document.onload = function(){ 
+          dropdownEditArrow.onclick = function(){
+
+            console.log("det fungerer");
+
+          }
+        };
       }
 
       /* erstater <tbody> af <table> */
       document.getElementById("dataTop3").innerHTML += html;
       document.getElementById("mainTableRows").innerHTML += html;
 
-      let dropdownEditBox = document.querySelectorAll(".dropdownEditDiv");
-      let dropdownEditArrow = document.getElementById("dropdownEditArrow");
-
-      window.onload = function(){ 
-        dropdownEditArrow.onclick = function(){
-
-          console.log("det fungerer");
-
-        }
-      };
+      
     }
   }
 
