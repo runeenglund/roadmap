@@ -80,91 +80,7 @@
               <th>Rediger</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>Formular</td>
-              <td>2</td>
-              <td>Igangværende</td>
-              <td>1 kommentar</td>
-              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-            </tr>
-            <tr>
-              <td>Dashboard</td>
-              <td>2</td>
-              <td>ventende</td>
-              <td>1 kommentar</td>
-              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-            </tr>
-            <tr>
-              <td>Ændring i menubar</td>
-              <td>2</td>
-              <td>Igangvære</td>
-              <td>1 kommentar</td>
-              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-            </tr>
-            <tr>
-              <td>Formular</td>
-              <td>2</td>
-              <td>Igangværende</td>
-              <td>1 kommentar</td>
-              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-            </tr>
-            <tr>
-              <td>Dashboard</td>
-              <td>2</td>
-              <td>ventende</td>
-              <td>1 kommentar</td>
-              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-            </tr>
-            <tr>
-              <td>Ændring i menubar</td>
-              <td>2</td>
-              <td>Igangvære</td>
-              <td>1 kommentar</td>
-              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-            </tr>
-            <tr>
-              <td>Formular</td>
-              <td>2</td>
-              <td>Igangværende</td>
-              <td>1 kommentar</td>
-              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-            </tr>
-            <tr>
-              <td>Dashboard</td>
-              <td>2</td>
-              <td>ventende</td>
-              <td>1 kommentar</td>
-              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-            </tr>
-            <tr>
-              <td>Ændring i menubar</td>
-              <td>2</td>
-              <td>Igangvære</td>
-              <td>1 kommentar</td>
-              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-            </tr>
-            <tr>
-              <td>Formular</td>
-              <td>2</td>
-              <td>Igangværende</td>
-              <td>1 kommentar</td>
-              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-            </tr>
-            <tr>
-              <td>Dashboard</td>
-              <td>2</td>
-              <td>ventende</td>
-              <td>1 kommentar</td>
-              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-            </tr>
-            <tr>
-              <td>Ændring i menubar</td>
-              <td>2</td>
-              <td>Igangvære</td>
-              <td>1 kommentar</td>
-              <td><i class="fa fa-angle-down" style="font-size:36px"></i></td>
-            </tr>
+          <tbody id="mainTableRows">
           </tbody>
         </table>
       </div>
@@ -191,8 +107,7 @@
     if (event.target == modal) {  
       modal.style.display = "none";
     }
-  }
-
+  };
 
   /* ajax GET kald */
   let ajax = new XMLHttpRequest();
@@ -252,14 +167,31 @@
           html += '<td><i class="fa fa-comments" aria-hidden="true" style="font-size:20px"></i>' + comment + '</td>';
           html += "<td>" + findQuarter(month); + "</td>";
           html += "<td>" + year + "</td>";
-          html += '<td><i class="fa fa-angle-down" style="font-size:36px"></i></td>';
+          html += '<td><i class="fa fa-angle-down" style="font-size:36px" id="dropdownEditArrow"></i></td>';
         html += "</tr>";
+        html += '<div class="dropdownEditDiv"></div>';
       }
 
       /* erstater <tbody> af <table> */
       document.getElementById("dataTop3").innerHTML += html;
+      document.getElementById("mainTableRows").innerHTML += html;
+
+      let dropdownEditBox = document.querySelectorAll(".dropdownEditDiv");
+      let dropdownEditArrow = document.getElementById("dropdownEditArrow");
+
+      window.onload = function(){ 
+        dropdownEditArrow.onclick = function(){
+
+          console.log("det fungerer");
+
+        }
+      };
     }
   }
+
+
+
+ 
 
 
   /* ajax POST kald */
