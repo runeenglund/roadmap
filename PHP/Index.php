@@ -65,7 +65,7 @@
 
         
         <div class ="headerTitle">
-          <h1>Top 3</h1>
+          <h1>Kommende funktioner</h1>
         </div>
       <div class="table">
         <table class="content-table">
