@@ -172,8 +172,24 @@ body {
     background-color: #FEFEFE;
 }
 
+.dropdownEditArrow{
+    cursor: pointer;
+}
+
 .dropdownEditDiv{
     display: none;
+}
+
+.dropdownEditDiv {
+    background-color: white;
+    position: relative;
+}
+
+.dropdownDivCloseBtn{
+    background-color: #F06F63;
+    color: #fff;
+    padding: 8px 16px;
+    cursor: pointer;
 }
 
 
