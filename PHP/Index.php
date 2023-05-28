@@ -97,11 +97,11 @@
 
   btn.onclick = function() {
   modal.style.display = "block";
-  }
+  };
 
   span.onclick = function() {
     modal.style.display = "none";
-  }
+  };
 
   window.onclick = function(event) {
     if (event.target == modal) {  
@@ -155,7 +155,7 @@
           } else if (month1 <= 12) {
               return 4
           }
-        }
+        };
         /* console.log(findQuarter(month)); */
 
         
@@ -179,7 +179,7 @@
 
             console.log("det fungerer");
 
-          }
+          };
         };
 
 
@@ -191,16 +191,16 @@
       document.getElementById("dataTop3").innerHTML += html;
       document.getElementById("mainTableRows").innerHTML += html;
 
-        function hello() {
-          alert('Hello');
-        }
+      function hello() {
+        alert('Hello');
+      };
 
 
-        let dropdownEditArrow = document.querySelectorAll(".dropdownEditArrow");
+      let dropdownEditArrow = document.querySelectorAll(".dropdownEditArrow");
 
-        for (let i = 0; i < dropdownEditArrow.length; i++) {
-          dropdownEditArrow[i].addEventListener("click", hello);
-        }
+      for (let i = 0; i < dropdownEditArrow.length; i++) {
+        dropdownEditArrow[i].addEventListener("click", hello);
+      };
 
       
     }
