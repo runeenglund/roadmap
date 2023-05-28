@@ -169,40 +169,31 @@
           html += "<td>" + year + "</td>";
           html += '<td><span class="dropdownEditArrow"><i class="fa fa-angle-down" style="font-size:36px"></i></span></td>';
         html += "</tr>";
-        html += '<div class="dropdownEditDiv"></div>';
+        html += '<div class="dropdownEditDiv">';
+          html += '<div class ="container"><h3>Navn</h3></div>';
+          html += '<div class ="container"><h3>Navn</h3></div>';
+          html += '<div class ="container"><h3>Navn</h3></div>';
+          html += '<div class ="container"><h3>Navn</h3></div>';
+          html += '<div class ="container"><h3>Navn</h3></div>';
+          html += '<div class ="container"><h3>Navn</h3></div>';
+        html += "</div>";
         
-  
-        
-
-        document.onload = function(){ 
-          dropdownEditArrow.onclick = function(){
-
-            console.log("det fungerer");
-
-          };
-        };
-
-
-
-
       }
 
       /* erstater <tbody> af <table> */
       document.getElementById("dataTop3").innerHTML += html;
       document.getElementById("mainTableRows").innerHTML += html;
 
-      function hello() {
-        alert('Hello');
-      };
-
-
       let dropdownEditArrow = document.querySelectorAll(".dropdownEditArrow");
-
+      let dropdownEditBox = document.getElementsByClassName("dropdownEditDiv");
+      
       for (let i = 0; i < dropdownEditArrow.length; i++) {
         dropdownEditArrow[i].addEventListener("click", hello);
-      };
 
-      
+        function hello() {
+          dropdownEditBox[i].style.display = "block";
+        };
+      };     
     }
   }
 
