@@ -89,7 +89,7 @@
 
 <script text="javascript">
 
-  /* opret nu opgave */
+  /* opret ny opgave */
 
   let modal = document.getElementById("myModal");
   let btn = document.getElementById("opretBTN");
