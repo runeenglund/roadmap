@@ -176,6 +176,7 @@
           html += '<div class ="container"><h3>Navn</h3></div>';
           html += '<div class ="container"><h3>Navn</h3></div>';
           html += '<div class ="container"><h3>Navn</h3></div>';
+          html += '<button class="dropdownDivCloseBtn">luk</button>';
         html += "</div>";
         
       }
@@ -186,12 +187,18 @@
 
       let dropdownEditArrow = document.querySelectorAll(".dropdownEditArrow");
       let dropdownEditBox = document.getElementsByClassName("dropdownEditDiv");
+      let dropdownDivCloseBtn = document.getElementsByClassName("dropdownDivCloseBtn");
       
       for (let i = 0; i < dropdownEditArrow.length; i++) {
-        dropdownEditArrow[i].addEventListener("click", hello);
+        dropdownEditArrow[i].addEventListener("click", openDropdownBox);
+        dropdownDivCloseBtn[i].addEventListener("click", closeDropdownBox);
 
-        function hello() {
+        function openDropdownBox() {
           dropdownEditBox[i].style.display = "block";
+        };
+
+        function closeDropdownBox() {
+          dropdownEditBox[i].style.display = "none";
         };
       };     
     }
