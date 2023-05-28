@@ -150,14 +150,14 @@
         let day = dateSplit[2];
 
         /* sorterer måneder ind i kvartaler med en if-statement */
-        let findQuarter = (month1 = 1) => {
-          if (month1 <= 3) {
+        let findQuarter = (monthQuarter = 1) => {
+          if (monthQuarter <= 3) {
               return 1
-          } else if (month1 <= 6) {
+          } else if (monthQuarter <= 6) {
               return 2
-          } else if (month1 <= 9) {
+          } else if (monthQuarter <= 9) {
               return 3
-          } else if (month1 <= 12) {
+          } else if (monthQuarter <= 12) {
               return 4
           }
         };
