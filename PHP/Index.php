@@ -124,6 +124,7 @@
       /* html værdier for <tbody> */
       let html = "";
       
+      /* Hack til at tilgå objektet rigtigt */
       let dataTasks = data.tasks;
 
       console.log(dataTasks);
@@ -132,7 +133,7 @@
       for (let i = 0; i < dataTasks.length; i++)
       {
 
-        /* Henter dataen fra tabellerne og sætter dem ind variabler */
+        /* Henter dataen fra tabellerne og sætter dem ind i variabler */
         let name = dataTasks[i].navn;
         let eval = dataTasks[i].bedømmelse;
         let status = dataTasks[i].taskStatus;
