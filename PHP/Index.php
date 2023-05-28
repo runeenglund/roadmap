@@ -132,19 +132,23 @@
       for (let i = 0; i < dataTasks.length; i++)
       {
 
+        /* Henter dataen fra tabellerne og sætter dem ind variabler */
         let name = dataTasks[i].navn;
         let eval = dataTasks[i].bedømmelse;
         let status = dataTasks[i].taskStatus;
         let date = dataTasks[i].dato;
         let comment = dataTasks[i].kommentar;
 
+        /* Ternary operator for status, fungerer som en if-statement. Hvis status er 1 printer den igangværende, hvis status er andet end 1 printer den ventende */
         let statusCurrentWaiting = (status == 1) ? "Igangværende":"Ventende";
 
+        /* Dato split. Splitter datoen ind i år, måneder, dage */
         let dateSplit = date.split("-");
         let year = dateSplit[0];
         let month = dateSplit[1];
         let day = dateSplit[2];
 
+        /* sorterer måneder ind i kvartaler med en if-statement */
         let findQuarter = (month1 = 1) => {
           if (month1 <= 3) {
               return 1
@@ -185,6 +189,7 @@
       document.getElementById("dataTop3").innerHTML += html;
       document.getElementById("mainTableRows").innerHTML += html;
 
+      /* Laver dropdown rediger bokse til hver af taskene */
       let dropdownEditArrow = document.querySelectorAll(".dropdownEditArrow");
       let dropdownEditBox = document.getElementsByClassName("dropdownEditDiv");
       let dropdownDivCloseBtn = document.getElementsByClassName("dropdownDivCloseBtn");
