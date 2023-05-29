@@ -16,7 +16,29 @@
     </div>
     <div id="overlay" onclick="off()">
         <div class="overlay-box">
-            <p>teeeeest</p>
+            <table>
+                <tr>
+                    <th>Navn</th>
+                    <th>Status</th>
+                    <th>Beskrivelse</th>
+                    <th>Dato</th>
+                </tr>
+                <?php
+                while($rows=$result->fetch_assoc())
+                {
+                ?>
+                <tr>
+                    <!-- FETCHING DATA FROM EACH
+                        ROW OF EVERY COLUMN -->
+                    <td><?php echo $rows['navn'];?></td>
+                    <td><?php echo $rows['taskStatus'];?></td>
+                    <td><?php echo $rows['beskrivelse'];?></td>
+                    <td><?php echo $rows['dato'];?></td>
+                </tr>
+                <?php
+                }
+                ?>
+            </table>
         </div>
     </div>
     
@@ -118,6 +140,108 @@
 
         function off() {
         document.getElementById("overlay").style.display = "none";
+        }
+
+        /* ajax GET kald */
+        let ajax = new XMLHttpRequest();
+        ajax.open("GET", "http://localhost/roadmap/PHP/dbCon/Api.php?action=show", true);
+        ajax.send();
+
+        /* modtager respons fra Api.php */
+        ajax.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+            let data = JSON.parse(this.responseText);
+            /* console.log(data); */
+
+            /* html værdier for <tbody> */
+            let html = "";
+            
+            /* Hack til at tilgå objektet rigtigt */
+            let dataTasks = data.tasks;
+
+            console.log(dataTasks);
+
+            /* looper gennem dataen */
+            for (let i = 0; i < dataTasks.length; i++)
+            {
+
+                /* Henter dataen fra tabellerne og sætter dem ind i variabler */
+                let name = dataTasks[i].navn;
+                let eval = dataTasks[i].bedømmelse;
+                let status = dataTasks[i].taskStatus;
+                let date = dataTasks[i].dato;
+                let comment = dataTasks[i].kommentar;
+
+                /* Ternary operator for status, fungerer som en if-statement. Hvis status er 1 printer den igangværende, hvis status er andet end 1 printer den ventende */
+                let statusCurrentWaiting = (status == 1) ? "Igangværende":"Ventende";
+
+                /* Dato split. Splitter datoen ind i år, måneder, dage */
+                let dateSplit = date.split("-");
+                let year = dateSplit[0];
+                let month = dateSplit[1];
+                let day = dateSplit[2];
+
+                /* sorterer måneder ind i kvartaler med en if-statement */
+                let findQuarter = (monthQuarter = 1) => {
+                if (monthQuarter <= 3) {
+                    return 1
+                } else if (monthQuarter <= 6) {
+                    return 2
+                } else if (monthQuarter <= 9) {
+                    return 3
+                } else if (monthQuarter <= 12) {
+                    return 4
+                }
+                };
+                /* console.log(findQuarter(month)); */
+
+                
+                /* appender til html */
+                html += "<tr>";
+                html += "<td>" + name + "</td>";
+                html += "<td>" + eval + "</td>";
+                html += "<td>" + statusCurrentWaiting + "</td>";
+                html += '<td><i class="fa fa-comments" aria-hidden="true" style="font-size:20px"></i>' + comment + '</td>';
+                html += "<td>" + findQuarter(month); + "</td>";
+                html += "<td>" + year + "</td>";
+                html += '<td><span class="dropdownEditArrow"><i class="fa fa-angle-down" style="font-size:36px"></i></span></td>';
+                html += "</tr>";
+                html += '<tr class="dropdownEditDiv">';
+                html += '<td ><input type="text" id="name" name="navn"></td>';
+                html += '<td ><h3>Navn</h3></td>';
+                html += '<td ><h3>Navn</h3></td>';
+                html += '<td ><h3>Navn</h3></td>';
+                html += '<td ><h3>Navn</h3></td>';
+                html += '<td ><h3>Navn</h3></td>';
+                html += '<td ><button class="dropdownDivCloseBtn">luk</button></td>';
+                html += "</tr>";
+                
+            }
+
+            /* erstater <tbody> af <table> */
+            document.getElementById("dataTop3").innerHTML += html;
+            document.getElementById("mainTableRows").innerHTML += html;
+
+            /* Laver dropdown rediger bokse til hver af taskene */
+            let dropdownEditArrow = document.querySelectorAll(".dropdownEditArrow");
+            let dropdownEditBox = document.getElementsByClassName("dropdownEditDiv");
+            let dropdownDivCloseBtn = document.getElementsByClassName("dropdownDivCloseBtn");
+            
+            for (let i = 0; i < dropdownEditArrow.length; i++) {
+                dropdownEditArrow[i].addEventListener("click", openDropdownBox);
+                dropdownDivCloseBtn[i].addEventListener("click", closeDropdownBox);
+
+                function openDropdownBox() {
+                dropdownEditBox[i].style.display = "block";
+                dropdownEditBox[i].style.display = "flex";
+                };
+
+                function closeDropdownBox() {
+                dropdownEditBox[i].style.display = "none";
+                };
+            };     
+            }
         }
     </script>
 </body>
