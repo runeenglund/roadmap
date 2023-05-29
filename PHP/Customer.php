@@ -16,29 +16,7 @@
     </div>
     <div id="overlay" onclick="off()">
         <div class="overlay-box">
-            <table>
-                <tr>
-                    <th>Navn</th>
-                    <th>Status</th>
-                    <th>Beskrivelse</th>
-                    <th>Dato</th>
-                </tr>
-                <?php
-                while($rows=$result->fetch_assoc())
-                {
-                ?>
-                <tr>
-                    <!-- FETCHING DATA FROM EACH
-                        ROW OF EVERY COLUMN -->
-                    <td><?php echo $rows['navn'];?></td>
-                    <td><?php echo $rows['taskStatus'];?></td>
-                    <td><?php echo $rows['beskrivelse'];?></td>
-                    <td><?php echo $rows['dato'];?></td>
-                </tr>
-                <?php
-                }
-                ?>
-            </table>
+            <div id="overlayData"></div>
         </div>
     </div>
     
@@ -115,7 +93,7 @@
                 <p>Udgivelse</p>
             </div>
         </div>
-        <div class="customer-box">
+        <div id="customer-box">
             <h2>overskrift8</h2>
             <p>text8</p>
             <p class="overlay-link" onclick="on()">Læs mere</p>
@@ -123,7 +101,7 @@
                 <p>Udgivelse</p>
             </div>
         </div>
-        <div class="customer-box">
+        <div id="customer-box">
             <h2>overskrift9</h2>
             <p>text9</p>
             <p class="overlay-link" onclick="on()">Læs mere</p>
@@ -144,7 +122,7 @@
 
         /* ajax GET kald */
         let ajax = new XMLHttpRequest();
-        ajax.open("GET", "http://localhost/roadmap/PHP/dbCon/Api.php?action=show", true);
+        ajax.open("GET", "http://localhost/roadmap/PHP/dbCon/Api.php?action=tasks", true);
         ajax.send();
 
         /* modtager respons fra Api.php */
@@ -170,8 +148,8 @@
                 let name = dataTasks[i].navn;
                 let eval = dataTasks[i].bedømmelse;
                 let status = dataTasks[i].taskStatus;
+                let beskrivelse = dataTasks[i].beskrivelse;
                 let date = dataTasks[i].dato;
-                let comment = dataTasks[i].kommentar;
 
                 /* Ternary operator for status, fungerer som en if-statement. Hvis status er 1 printer den igangværende, hvis status er andet end 1 printer den ventende */
                 let statusCurrentWaiting = (status == 1) ? "Igangværende":"Ventende";
@@ -198,51 +176,20 @@
 
                 
                 /* appender til html */
-                html += "<tr>";
-                html += "<td>" + name + "</td>";
-                html += "<td>" + eval + "</td>";
-                html += "<td>" + statusCurrentWaiting + "</td>";
-                html += '<td><i class="fa fa-comments" aria-hidden="true" style="font-size:20px"></i>' + comment + '</td>';
-                html += "<td>" + findQuarter(month); + "</td>";
-                html += "<td>" + year + "</td>";
-                html += '<td><span class="dropdownEditArrow"><i class="fa fa-angle-down" style="font-size:36px"></i></span></td>';
-                html += "</tr>";
-                html += '<tr class="dropdownEditDiv">';
-                html += '<td ><input type="text" id="name" name="navn"></td>';
-                html += '<td ><h3>Navn</h3></td>';
-                html += '<td ><h3>Navn</h3></td>';
-                html += '<td ><h3>Navn</h3></td>';
-                html += '<td ><h3>Navn</h3></td>';
-                html += '<td ><h3>Navn</h3></td>';
-                html += '<td ><button class="dropdownDivCloseBtn">luk</button></td>';
-                html += "</tr>";
-                
+                html += "<h2>" + name + "</h2>";
+                html += "<h3>Beskrivelse</h3>";
+                html += "<p>" + beskrivelse + "</p>";
+                html += "<h4>Status: " + statusCurrentWaiting + "</h4>";
+                html += "<h4>Kvartal " + findQuarter(month); + "</h4>";
+                html += "<h4>År " + year + "</h4>";
             }
 
-            /* erstater <tbody> af <table> */
-            document.getElementById("dataTop3").innerHTML += html;
-            document.getElementById("mainTableRows").innerHTML += html;
-
-            /* Laver dropdown rediger bokse til hver af taskene */
-            let dropdownEditArrow = document.querySelectorAll(".dropdownEditArrow");
-            let dropdownEditBox = document.getElementsByClassName("dropdownEditDiv");
-            let dropdownDivCloseBtn = document.getElementsByClassName("dropdownDivCloseBtn");
-            
-            for (let i = 0; i < dropdownEditArrow.length; i++) {
-                dropdownEditArrow[i].addEventListener("click", openDropdownBox);
-                dropdownDivCloseBtn[i].addEventListener("click", closeDropdownBox);
-
-                function openDropdownBox() {
-                dropdownEditBox[i].style.display = "block";
-                dropdownEditBox[i].style.display = "flex";
-                };
-
-                function closeDropdownBox() {
-                dropdownEditBox[i].style.display = "none";
-                };
-            };     
+            /* inputter data */
+            document.getElementById("overlayData").innerHTML += html;
+            document.getElementById("customer-box").innerHTML += html;
             }
         }
     </script>
+    <p></p>
 </body>
 </html>
