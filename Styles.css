@@ -103,7 +103,7 @@ body {
 }
 
 .content-table-top3 thead tr {
-    background-color: #2A5EF6;
+    background-color: #152F7B;
     color: #ffffff;
     text-align: left;
     font-weight: bold;
@@ -124,7 +124,7 @@ body {
 }
 
 .content-table-top3 tbody tr:nth-of-type(uneven) {
-    background-color: #E8F3F4;
+    background-color: #227178;
 }
 
 .content-table-top3 tbody tr.active-row {
@@ -143,7 +143,7 @@ body {
 }
 
 .content-table thead tr {
-    background-color: #2A5EF6;
+    background-color: #152F7B;
     color: #ffffff;
     text-align: left;
     font-weight: bold;
