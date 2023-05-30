@@ -271,12 +271,6 @@ body {
     border-width: 5px 5px 5px 0;
     border-radius: 0 50px 50px 0;
   }
-  
-  /* Removing the border if it is the first card */
-  .customer-box-container:first-child::before {
-    border-top: 0;
-    border-top-left-radius: 0;
-  }
 
 .top-customer{
     padding-right: 5%;
