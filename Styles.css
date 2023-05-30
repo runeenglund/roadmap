@@ -196,17 +196,13 @@ body {
 
 /* -----------------Customer------------------ */
 .customer-box-container{
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
     padding-top: 5%;
-    z-index: 2;
 }
 
 .customer-box{
     background-color: #2A5EF6;
     color: #fff;
-    width: 25%;
+    width: 400px;
     padding: 10px;
     display: table;
 }
@@ -238,7 +234,9 @@ body {
 }
 
 .top-customer{
-    padding: 5%;
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-top: 5%;
     color: #fff;
 }
 
