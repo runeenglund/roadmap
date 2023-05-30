@@ -226,11 +226,13 @@ body {
 #customer-data{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 5%;
 }
 
 .customer-publication .udgivelse{
-    padding: 5%;
+    padding-right: 5%;
+    padding-left: 5%;
 }
 
 .top-customer{
