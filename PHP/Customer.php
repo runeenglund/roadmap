@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kunder</title>
     <link rel="stylesheet" type="text/css" href="../Styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div class="topCustomer">
+    <div class="top-customer">
         <h1>Roadmap</h1>
         <p>Ved at klikke ind på funktionerne, kan i vote omkring dem og tilknytte kommentarer.</p>
         <p>OBS! Der kan forekomme ændringer efter jeres voteringer.</p>
@@ -16,7 +17,8 @@
     </div>
     <div id="overlay" onclick="off()">
         <div class="overlay-box">
-            <div id="overlayData"></div>
+            <i class="fa-solid fa-x"></i>
+            <div id="overlay-data"></div>
         </div>
     </div>
     
@@ -32,84 +34,8 @@
         Din browser understøtter ikke inline SVG.
     </svg> 
 
-    <div class="customer-box-container">
-        <div class="customer-box">
-            <h2>overskrift1</h2>
-            <p>text1</p>
-            <p class="overlay-link" onclick="on()">Læs mere</p>
-            <div class="customer-publication">
-                <p>Udgivelse</p>
-            </div>
-        </div>
-        <div class="customer-box">
-            <h2>overskrift2</h2>
-            <p>text2</p>
-            <p class="overlay-link" onclick="on()">Læs mere</p>
-            <div class="customer-publication">
-                <p>Udgivelse</p>
-            </div>
-        </div>
-        <div class="customer-box">
-            <h2>overskrift3</h2>
-            <p>text3</p>
-            <p class="overlay-link" onclick="on()">Læs mere</p>
-            <div class="customer-publication">
-                <p>Udgivelse</p>
-            </div>
-        </div>
-    </div>
-    <div class="customer-box-container">
-        <div class="customer-box">
-            <h2>overskrift6</h2>
-            <p>text6</p>
-            <p class="overlay-link" onclick="on()">Læs mere</p>
-            <div class="customer-publication">
-                <p>Udgivelse</p>
-            </div>
-        </div>
-        <div class="customer-box">
-            <h2>overskrift5</h2>
-            <p>text5</p>
-            <p class="overlay-link" onclick="on()">Læs mere</p>
-            <div class="customer-publication">
-                <p>Udgivelse</p>
-            </div>
-        </div>
-        <div class="customer-box">
-            <h2>overskrift4</h2>
-            <p>text4</p>
-            <p class="overlay-link" onclick="on()">Læs mere</p>
-            <div class="customer-publication">
-                <p>Udgivelse</p>
-            </div>
-        </div>
-    </div>
-    <div class="customer-box-container">
-        <div class="customer-box">
-            <h2>overskrift7</h2>
-            <p>text7</p>
-            <p class="overlay-link" onclick="on()">Læs mere</p>
-            <div class="customer-publication">
-                <p>Udgivelse</p>
-            </div>
-        </div>
-        <div id="customer-box">
-            <h2>overskrift8</h2>
-            <p>text8</p>
-            <p class="overlay-link" onclick="on()">Læs mere</p>
-            <div class="customer-publication">
-                <p>Udgivelse</p>
-            </div>
-        </div>
-        <div id="customer-box">
-            <h2>overskrift9</h2>
-            <p>text9</p>
-            <p class="overlay-link" onclick="on()">Læs mere</p>
-            <div class="customer-publication">
-                <p>Udgivelse</p>
-            </div>
-        </div>
-    </div>
+    <div id="customer-data"></div>
+
     <script>
         //overlay on/off
         function on() {
@@ -143,7 +69,6 @@
             /* looper gennem dataen */
             for (let i = 0; i < dataTasks.length; i++)
             {
-
                 /* Henter dataen fra tabellerne og sætter dem ind i variabler */
                 let name = dataTasks[i].navn;
                 let eval = dataTasks[i].bedømmelse;
@@ -173,22 +98,28 @@
                 }
                 };
                 /* console.log(findQuarter(month)); */
-
                 
                 /* appender til html */
-                html += "<h2>" + name + "</h2>";
-                html += "<h3>Beskrivelse</h3>";
-                html += "<p>" + beskrivelse + "</p>";
-                html += "<h4>Status: " + statusCurrentWaiting + "</h4>";
-                html += "<h4>Kvartal " + findQuarter(month); + "</h4>";
-                html += "<h4>År " + year + "</h4>";
+                html += '<div class="customer-box-container">';
+                    html += '<div class="customer-box">';
+                        html += "<h2>" + name + "</h2>";
+                        html += "<p>Status: " + statusCurrentWaiting + "</p>";
+                        html += "<h3>Beskrivelse</h3>";
+                        html += "<p>" + beskrivelse + "</p>";
+                        html += '<p class="overlay-link" onclick="on()">Læs mere</p>';
+                        html += '<div class="customer-publication">';
+                            html += '<h4 class="udgivelse">Kvartal ' + findQuarter(month); + "</h4>";
+                            html += '<h4 class="udgivelse">År ' + year + "</h4>";
+                        html += '</div>';
+                    html += '</div>';
+                html += '</div>';
             }
 
             /* inputter data */
-            document.getElementById("overlayData").innerHTML += html;
-            document.getElementById("customer-box").innerHTML += html;
+            document.getElementById("customer-data").innerHTML += html;
             }
         }
+
     </script>
 </body>
 </html>

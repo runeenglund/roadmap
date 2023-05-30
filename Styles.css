@@ -216,6 +216,7 @@ body {
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
+    position: absolute;
 }
 
 .customer-publication{
@@ -223,10 +224,14 @@ body {
     background-color: #F06F63;
     float: right;
     justify-content: center;
-    width: 25%;
+    width: 40%;
 }
 
-.topCustomer{
+.customer-publication .udgivelse{
+    padding: 5%;
+}
+
+.top-customer{
     padding: 5%;
     color: #fff;
 }
