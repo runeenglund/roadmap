@@ -197,6 +197,8 @@ body {
 /* -----------------Customer------------------ */
 .customer-box-container{
     padding-top: 5%;
+    position: relative;
+    max-width: 400px;
 }
 
 .customer-box{
@@ -221,19 +223,60 @@ body {
     float: right;
     justify-content: center;
     width: 40%;
-}
-
-#customer-data{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 5%;
+    margin: 5%;
 }
 
 .customer-publication .udgivelse{
     padding-right: 5%;
     padding-left: 5%;
 }
+
+#customer-data{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5%;
+    justify-content: space-between;
+}
+
+
+  /* setting padding based on even or odd */
+  .customer-box-container:nth-child(odd) {
+    padding: 30px 0px 30px 30px;
+  }
+  .customer-box-container:nth-child(even) {
+    padding: 30px 30px 30px 0;
+  }
+  /* Global ::before */
+  .customer-box-container::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    border: solid orangered;
+  }
+  
+  /* Setting the border of top, bottom, left */
+  .customer-box-container:nth-child(odd)::before {
+    left: 0px;
+    top: -4.5px;
+    bottom: -4.5px;
+    border-width: 5px 0 5px 5px;
+    border-radius: 50px 0 0 50px;
+  }
+  
+  /* Setting the border of top, bottom, right */
+  .customer-box-container:nth-child(even)::before {
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-width: 5px 5px 5px 0;
+    border-radius: 0 50px 50px 0;
+  }
+  
+  /* Removing the border if it is the first card */
+  .customer-box-container:first-child::before {
+    border-top: 0;
+    border-top-left-radius: 0;
+  }
 
 .top-customer{
     padding-right: 5%;
