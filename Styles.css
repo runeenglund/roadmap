@@ -227,6 +227,12 @@ body {
     width: 40%;
 }
 
+#customer-data{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
 .customer-publication .udgivelse{
     padding: 5%;
 }
