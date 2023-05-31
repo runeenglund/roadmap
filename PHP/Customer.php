@@ -17,8 +17,12 @@
     </div>
     <div id="overlay" onclick="off()">
         <div class="overlay-box">
-            <i class="fa-solid fa-x"></i>
             <div id="overlay-data"></div>
+            <h2>Kommentar:</h2>
+            <div class="comment">
+                <textarea name="kommentar" id="kommentar" cols="100" rows="10"></textarea>
+                <button type="submit" id="submitBTN">Send</button>
+            </div>
         </div>
     </div>
 
@@ -105,6 +109,7 @@
 
             /* inputter data */
             document.getElementById("customer-data").innerHTML += html;
+            document.getElementById("overlay-data").innerHTML += html;
             }
         }
 
