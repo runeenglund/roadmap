@@ -39,7 +39,10 @@
                 <input type="text" id="year" name="årstal">
               </div>
             </div>
-            <button type="submit" class="saveBTN">Gem</button>
+            <div class="divBTNS">
+              <button type="submit" class="cancelBTN">Annuller</button>
+              <button type="submit" class="saveBTN">Gem</button>
+            </div>
           </div>
         </form>
       </div>

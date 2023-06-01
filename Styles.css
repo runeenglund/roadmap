@@ -69,11 +69,36 @@ body {
 .modal-div2 {
     display: flex;
     justify-content: space-evenly;
-    height: 430px;
+    height: 320px;
 }
 
+.divBTNS {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    float: right;
+    margin: 20px;
+    height: 100px;
+    justify-content: space-evenly;
+}
+
+.cancelBTN{
+     background-color: #F06F63;
+    color: #fff;
+    padding: 8px 16px;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    float: right;
+}
+
+
 .saveBTN {
-    background-color: #F06F63;
+    background-color: #22C55E;
     color: #fff;
     padding: 8px 16px;
     font-weight: 600;
@@ -428,7 +453,7 @@ padding: 5%;
     .modal-div2 {
         display: flex;
         justify-content: space-evenly;
-        height: 300px;
+        height: 340px;
     }
 
     .table {
@@ -438,6 +463,9 @@ padding: 5%;
 }
 
 @media (max-width: 900px ) {
+    .modal-div2 {
+        height: 280px;
+    }
     .modal-content {
         height: 43%;
     }
@@ -461,7 +489,7 @@ padding: 5%;
 
 @media (max-width: 500px ) {
     .modal-div2 {
-        height: 523px;
+        height: 260px;
     }
 
     th {
