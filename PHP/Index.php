@@ -178,13 +178,11 @@
           html += '<td><span class="dropdownEditArrow"><i class="fa fa-angle-down" style="font-size:36px"></i></span></td>';
         html += "</tr>";
         html += '<tr class="dropdownEditDiv">';
-          html += '<td ><input type="text" id="name" name="navn"></td>';
-          html += '<td ><h3>Navn</h3></td>';
-          html += '<td ><h3>Navn</h3></td>';
-          html += '<td ><h3>Navn</h3></td>';
-          html += '<td ><h3>Navn</h3></td>';
-          html += '<td ><h3>Navn</h3></td>';
-          html += '<td ><button class="dropdownDivCloseBtn">luk</button></td>';
+          html += '<td ><h3>Navn</h3><input type="text" id="name" name="navn"></td>';
+          html += '<td ><h3>Status</h3><input type="text" id="name" name="navn"></td>';
+          html += '<td ><h3>Beskrivelse</h3><input type="text" id="name" name="navn"></td>';
+          html += '<td ><h3>Årstal</h3><input type="text" id="name" name="navn"></td>';
+          html += '<td ><button class="dropdownDivCloseBtn">Gem</button></td>';
         html += "</tr>";
         
       }
@@ -204,7 +202,6 @@
 
         function openDropdownBox() {
           dropdownEditBox[i].style.display = "block";
-          dropdownEditBox[i].style.display = "flex";
         };
 
         function closeDropdownBox() {
