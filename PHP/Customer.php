@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kunder</title>
     <link rel="stylesheet" type="text/css" href="../Styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="top-customer">
@@ -15,9 +14,10 @@
         <p>OBS! Der kan forekomme ændringer efter jeres voteringer.</p>
         <button id="workerBTN" onclick="window.location.href='index.php'">Medarbejder</button>
     </div>
-    <div id="overlay" onclick="off()">
+    <div id="overlay">
         <div class="overlay-box">
-            <div id="overlay-data"></div>
+            <span class="close" onclick="hideOverlay()">&times;</span>
+            <div id="overlay-content"></div>
             <h2>Kommentar:</h2>
             <div class="comment">
                 <textarea name="kommentar" id="kommentar" cols="100" rows="10"></textarea>
@@ -27,17 +27,15 @@
     </div>
 
     <div id="customer-data"></div>
+    <svg id="svg-line-box" viewBox="100" preserveAspectRatio="xMidYMid meet">
+        <path d="M 100 140 h1200 v0" stroke="#F06F63" stroke-width="5" fill="none" /> 
+        <path d="M 1400 150 h0 v300" stroke="#F06F63" stroke-width="5" fill="none" /> 
+        <path d="M 100 420 h1200 v0" stroke="#F06F63" stroke-width="5" fill="none" /> 
+        Din browser understøtter ikke inline SVG.
+    </svg> 
+
 
     <script>
-        //overlay on/off
-        function on() {
-        document.getElementById("overlay").style.display = "block";
-        }
-
-        function off() {
-        document.getElementById("overlay").style.display = "none";
-        }
-
         /* ajax GET kald */
         let ajax = new XMLHttpRequest();
         ajax.open("GET", "http://localhost/roadmap/PHP/dbCon/Api.php?action=tasks", true);
@@ -96,9 +94,7 @@
                     html += '<div class="customer-box">';
                         html += "<h2>" + name + "</h2>";
                         html += "<p>Status: " + statusCurrentWaiting + "</p>";
-                        html += "<h3>Beskrivelse</h3>";
-                        html += "<p>" + beskrivelse + "</p>";
-                        html += '<p class="overlay-link" onclick="on()">Læs mere</p>';
+                        html += '<div class="overlay-link" onclick="showOverlay(\'' + "<h2>" + name + "</h2>" + "<p>Status: " + statusCurrentWaiting + "</p>" + beskrivelse + findQuarter(month) + "')\">Læs mere</div>";
                         html += '<div class="customer-publication">';
                             html += '<h4 class="udgivelse">Kvartal ' + findQuarter(month); + "</h4>";
                             html += '<h4 class="udgivelse">År ' + year + "</h4>";
@@ -109,9 +105,33 @@
 
             /* inputter data */
             document.getElementById("customer-data").innerHTML += html;
-            document.getElementById("overlay-data").innerHTML += html;
             }
         }
+
+        function showOverlay(beskrivelse) {
+        let overlay = document.getElementById("overlay");
+        let overlayContent = document.getElementById("overlay-content");
+
+        overlayContent.innerHTML = beskrivelse;
+        overlay.style.display = "block";
+        }
+
+        function hideOverlay() {
+        let overlay = document.getElementById("overlay");
+        overlay.style.display = "none";
+        }
+
+        /*
+        function specificData(id) {
+        fetch(`http://localhost/roadmap/PHP/dbCon/Api.php?action=tasks/${id}`)
+            .then(response => response.json())
+            .then(data => {
+            console.log(data);
+            })
+            .catch(error => {
+            console.error('Error:', error);
+            });
+        }*/
 
     </script>
 </body>
