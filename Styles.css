@@ -1,7 +1,7 @@
 /* -----------------Employee------------------ */
 
 body {
-    background-color: #062B95;
+    background-color: #2047B9;
     margin: 0;
 }
 
@@ -28,6 +28,7 @@ body {
 
 .headerTitle {
     margin: 50px 20px 0px 100px;
+    color: #fff;
 }
 
 .modal {
@@ -233,6 +234,7 @@ body {
     width: 400px;
     padding: 10px;
     display: table;
+    border: 5px solid #F06F63;
 }
 
 .customer-box .overlay-link{
@@ -266,6 +268,10 @@ body {
     margin-bottom: 5%;
     position: absolute;
     width: 90%;
+}
+
+.status-funktion{
+    color: #22C55E;
 }
 
   #svg-line-box{

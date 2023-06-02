@@ -93,7 +93,7 @@
                 html += '<div class="customer-box-container">';
                     html += '<div class="customer-box">';
                         html += "<h2>" + name + "</h2>";
-                        html += "<p>Status: " + statusCurrentWaiting + "</p>";
+                        html += '<p class="status-funktion">Status: ' + statusCurrentWaiting + "</p>";
                         html += '<div class="overlay-link" onclick="showOverlay(\'' + "<h2>" + name + "</h2>" + "<p>Status: " + statusCurrentWaiting + "</p>" + beskrivelse +  "')\">Læs mere</div>";
                         html += '<div class="customer-publication">';
                             html += '<h4 class="udgivelse">Kvartal ' + findQuarter(month); + "</h4>";
