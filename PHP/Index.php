@@ -138,7 +138,7 @@
 
         /* Henter dataen fra tabellerne og sætter dem ind i variabler */
         let name = dataTasks[i].navn;
-        let eval = dataTasks[i].bedømmelse;
+        let eval = dataTasks[i].bedømmelse_id;
         let status = dataTasks[i].taskStatus;
         let date = dataTasks[i].dato;
         let comment = dataTasks[i].kommentar;
