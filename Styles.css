@@ -70,6 +70,8 @@ body {
 .modal-div2 {
     display: flex;
     justify-content: space-evenly;
+    align-content: flex-start;
+    flex-wrap: wrap;
     height: 300px;
 }
 
@@ -87,9 +89,9 @@ body {
 .saveBTN {
     background-color: #16A34A;
     color: #fff;
-    padding: 8px 48px;
+    padding: 8px 38px;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 14px;
     letter-spacing: 1px;
     text-transform: uppercase;
     border: none;
@@ -102,15 +104,53 @@ body {
 .cancelBTN {
     background-color: #F06F63;
     color: #fff;
-    padding: 8px 16px;
+    padding: 8px 10px;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 14px;
     letter-spacing: 1px;
     text-transform: uppercase;
     border: none;
     border-radius: 3px;
     cursor: pointer;
     margin: 20px;
+}
+
+#name, #year {
+    width: 100px;
+}
+
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
 
 .table {
@@ -415,6 +455,10 @@ padding: 5%;
 }
 
 @media (max-width: 900px ) {
+    .modal-div2 h2 {
+        font-size: 18px;
+    }
+
     .content-table-top3 th, .content-table-top3 td {
         padding: 10px 15px;
     }

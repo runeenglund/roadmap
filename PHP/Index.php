@@ -25,9 +25,15 @@
                 <h2>Navn:</h2>
                   <input type="text" id="name" name="navn">
                 </div>
+                <div>
                 <div class="modalDivStatus">
                   <h2>Status:</h2>
-                  <input type="text" id="status" name="taskStatus">
+                  <button onclick="myDropDown()" type="click" class="dropbtn">Vælg<i class="fa fa-angle-down" style="font-size:20px"></i></button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#">Ventende</a>
+                        <a href="#">Igangværende</a>
+                    </div>
+                </div>
                 </div>
                 <div class="modalDivDesc">
                   <h2>Beskrivelse:</h2>
@@ -39,7 +45,7 @@
               </div>
             </div>
             <div class="divBTNS">
-              <button type="submit" class="cancelBTN">Annuller</button>
+              <button class="cancelBTN">Annuller</button>
               <button type="submit" class="saveBTN">Gem</button>
             </div>
           </div>
@@ -115,6 +121,25 @@
       modal.style.display = "none";
     }
   };
+
+  function myDropDown() {
+    let myDropDown = document.getElementById("myDropdown")
+
+    myDropDown.style.display = "block";
+  };
+
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      let dropdowns = document.getElementsByClassName("dropdown-content");
+      for (i = 0; i < dropdowns.length; i++) {
+        let openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
 
   /* ajax GET kald */
   let ajax = new XMLHttpRequest();
