@@ -49,10 +49,10 @@
     }
     
     if($action=='addtasks'){
-        /* $navn = $_POST['navn'];
+        $navn = $_POST['navn'];
         $taskStatus = $_POST['taskStatus'];
         $beskrivelse = $_POST['beskrivelse'];
-        $dato = $_POST['dato']; */
+        $dato = $_POST['dato'];
 
        
        

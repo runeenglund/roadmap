@@ -18,7 +18,7 @@
 
     <div id="myModal" class="modal">
       <div class="modal-content">
-        <form id="form">
+        <form id="form" action="http://localhost/roadmap/PHP/dbCon/Api.php?action=addtasks" method="post">
           <div class="modal-div1">
             <div class="modal-div2">
               <div class="modalDivName">
@@ -28,11 +28,11 @@
                 <div>
                 <div class="modalDivStatus">
                   <h2>Status:</h2>
-                  <button onclick="myDropDown()" type="click" class="dropbtn">Vælg<i class="fa fa-angle-down" style="font-size:20px"></i></button>
-                    <div id="myDropdown" class="dropdown-content">
-                        <a href="#">Ventende</a>
-                        <a href="#">Igangværende</a>
-                    </div>
+                    <select name="taskStatus" id="dropbtn">
+                      <option value="">Vælg</option>
+                      <option value="0">Ventende</option>
+                      <option value="1">Igangværende</option>
+                    </select>
                 </div>
                 </div>
                 <div class="modalDivDesc">
@@ -41,7 +41,7 @@
                 </div>
               <div class="modalDivDate">
                 <h2>Dato:</h2>
-                <input type="text" id="year" name="årstal">
+                <input type="text" id="year" name="dato">
               </div>
             </div>
             <div class="divBTNS">
@@ -98,7 +98,6 @@
 <script text="javascript">
 
   /* opret ny opgave */
-
   let modal = document.getElementById("myModal");
   let btn = document.getElementById("opretBTN");
   let cancel = document.getElementsByClassName("cancelBTN")[0];
@@ -122,24 +121,6 @@
     }
   };
 
-  function myDropDown() {
-    let myDropDown = document.getElementById("myDropdown")
-
-    myDropDown.style.display = "block";
-  };
-
-  // Close the dropdown menu if the user clicks outside of it
-  window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-      let dropdowns = document.getElementsByClassName("dropdown-content");
-      for (i = 0; i < dropdowns.length; i++) {
-        let openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
-    }
-  }
 
   /* ajax GET kald */
   let ajax = new XMLHttpRequest();
@@ -214,7 +195,7 @@
           html += '<td ><button class="dropdownDivCloseBtn">Gem</button></td>';
         html += "</tr>";
         
-      }
+      };
 
       /* erstater <tbody> af <table> */
       document.getElementById("dataTop3").innerHTML += html;
@@ -237,15 +218,15 @@
           dropdownEditBox[i].style.display = "none";
         };
       };     
-    }
-  }
+    };
+  };
 
 
 
  
 
 
-  /* ajax POST kald */
+  /* ajax POST kald(VIRKER IKKE) */
   let form = document.querySelector('#form');
 
   form.addEventListener('submit',(e) => {
@@ -255,7 +236,7 @@
 
     let res = Object.fromEntries(formData);
     let payload = JSON.stringify(form);
-    /* console.log(res); */
+    console.log(res);
     console.log(payload);
 
     for (item of formData) {
