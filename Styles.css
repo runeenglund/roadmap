@@ -70,20 +70,22 @@ body {
 .modal-div2 {
     display: flex;
     justify-content: space-evenly;
-    height: 390px;
+    height: 300px;
 }
 
 .divBTNS {
-    width: 200px;
     height: 100px;
+    width: 100%;
     float: right;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: flex-end;
+    bottom: 5%;
+
 }
 
 .saveBTN {
-    background-color: #F06F63;
+    background-color: #16A34A;
     color: #fff;
     padding: 8px 48px;
     font-weight: 600;
@@ -93,6 +95,8 @@ body {
     border: none;
     border-radius: 3px;
     cursor: pointer;
+    margin: 20px;
+
 }
 
 .cancelBTN {
@@ -106,6 +110,7 @@ body {
     border: none;
     border-radius: 3px;
     cursor: pointer;
+    margin: 20px;
 }
 
 .table {
@@ -410,10 +415,6 @@ padding: 5%;
 }
 
 @media (max-width: 900px ) {
-    .modal-content {
-        height: 43%;
-    }
-
     .content-table-top3 th, .content-table-top3 td {
         padding: 10px 15px;
     }

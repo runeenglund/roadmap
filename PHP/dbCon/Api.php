@@ -61,7 +61,7 @@
             die("connection error: ". mysqli_connect_errno());
         }
      
-        $stmt = $conn->prepare("INSERT INTO tasks (navn, taskStatus, beskrivelse, årstal) VALUES (?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO tasks (navn, taskStatus, beskrivelse, dato) VALUES (?, ?, ?, ?)");
        
        /*  $stmt = mysqli_stmt_init($conn); */
 
@@ -70,7 +70,7 @@
 
         } */
 
-        $stmt->bind_param( "sisi", $navn, $taskStatus, $beskrivelse, $årstal);
+        $stmt->bind_param( "sisi", $navn, $taskStatus, $beskrivelse, $dato);
         /* mysqli_stmt_execute($stmt) */;
         $stmt->execute();
         $stmt->close();
@@ -84,10 +84,10 @@
     if($action=='updatetasks'){
         $navn = $_PUT['navn'];
         $bedømmelse = $_PUT['bedømmelse'];
-        $status = $_PUT['status'];
-        $kommentar = $_PUT['kommentar'];
+        $status = $_PUT['taskStatus'];
+        $kommentar = $_PUT['kommentar_id'];
      
-        $sql="UPDATE tasks SET navn='$navn', bedømmelse='$bedømmelse', status='$status', kommentar='$kommentar'";
+        $sql="UPDATE tasks SET navn='$navn', bedømmelse='$bedømmelse', taskStatus='$taskStatus', kommentar_id='$kommentar_id'";
         $query=$conn->query($sql);
         
         if($query){

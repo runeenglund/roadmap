@@ -18,7 +18,6 @@
 
     <div id="myModal" class="modal">
       <div class="modal-content">
-        <span class="close">Close</span>
         <form id="form">
           <div class="modal-div1">
             <div class="modal-div2">
@@ -96,13 +95,18 @@
 
   let modal = document.getElementById("myModal");
   let btn = document.getElementById("opretBTN");
-  let span = document.getElementsByClassName("close")[0];
+  let cancel = document.getElementsByClassName("cancelBTN")[0];
+  let save = document.getElementsByClassName("saveBTN")[0];
 
   btn.onclick = function() {
   modal.style.display = "block";
   };
 
-  span.onclick = function() {
+  cancel.onclick = function() {
+    modal.style.display = "none";
+  };
+
+  save.onclick = function() {
     modal.style.display = "none";
   };
 
