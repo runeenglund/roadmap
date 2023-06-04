@@ -49,8 +49,8 @@ body {
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
-    height: 50%;
+    width: 70%;
+    height: 40%;
 }
 
 .close {
@@ -70,10 +70,8 @@ body {
 .modal-div {
     display: flex;
     justify-content: space-evenly;
-    align-content: flex-start;
-    flex-wrap: wrap;
     min-width: 200px;
-    min-height: 250px;
+    min-height: 180px;
 }
 
 .modal-content h2 {
@@ -138,6 +136,10 @@ input {
 
 #date {
     width: 8em;
+}
+
+label {
+    float: left;
 }
 
 .table {
@@ -429,10 +431,18 @@ padding: 5%;
 }
 
 @media (max-width: 1050px ) {
+    #description {
+        min-width: 500px;
+    }
+
     .modal-div {
         display: block;
         justify-content: space-evenly;
         width: 50%;
+    }
+
+    .modal-content {
+        height: 50%;
     }
 
     .modalDivName, .modalDivStatus, .modalDivDesc, .modalDivDate {
@@ -443,12 +453,25 @@ padding: 5%;
         width: 300px;
     }
 
+    .divBTNS {
+        height: 0%;
+        justify-content: flex-start;
+    }
+
 }
 
 @media (max-width: 900px ) {
     .modal-div h2 {
         font-size: 18px;
     }
+
+    .modal-content {
+        height: 50%;
+    }
+
+    #description {
+        min-width: 400px;
+    } 
 
     .content-table-top3 th, .content-table-top3 td {
         padding: 10px 15px;
@@ -469,6 +492,13 @@ padding: 5%;
 
 @media (max-width: 500px ) {
 
+    .modal-content {
+        height: 45%;
+    }
+
+    #description {
+        min-width: 300px;
+    } 
 
     th {
         display: none;
