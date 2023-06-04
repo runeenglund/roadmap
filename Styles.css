@@ -67,12 +67,18 @@ body {
     cursor: pointer;
 }
 
-.modal-div2 {
+.modal-div {
     display: flex;
     justify-content: space-evenly;
     align-content: flex-start;
     flex-wrap: wrap;
-    height: 300px;
+    min-width: 200px;
+    min-height: 280px;
+}
+
+input {
+    padding: .5em;
+    border: solid 1px #999;
 }
 
 .divBTNS {
@@ -115,8 +121,12 @@ body {
     margin: 20px;
 }
 
-#name, #year {
-    width: 100px;
+#name {
+    width: 15em;
+}
+
+#date {
+    width: 8em;
 }
 
 .table {
@@ -408,10 +418,13 @@ padding: 5%;
 }
 
 @media (max-width: 1050px ) {
-    .modal-div2 {
-        display: flex;
+    .modal-div {
+        display: block;
         justify-content: space-evenly;
-        height: 300px;
+    }
+
+    .modalDivName, .modalDivStatus, .modalDivDesc, .modalDivDate {
+        margin-bottom: 10px;
     }
 
     .table {
@@ -421,7 +434,7 @@ padding: 5%;
 }
 
 @media (max-width: 900px ) {
-    .modal-div2 h2 {
+    .modal-div h2 {
         font-size: 18px;
     }
 
@@ -443,9 +456,7 @@ padding: 5%;
 }
 
 @media (max-width: 500px ) {
-    .modal-div2 {
-        height: 523px;
-    }
+
 
     th {
         display: none;

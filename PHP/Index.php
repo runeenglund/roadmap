@@ -18,17 +18,18 @@
 
     <div id="myModal" class="modal">
       <div class="modal-content">
+        <h2>Oprettelse af nye features</h2>
+        <p>Herunder kan du oprette nye features</p>
         <form id="form" action="http://localhost/roadmap/PHP/dbCon/Api.php?action=addtasks" method="post">
-          <div class="modal-div1">
-            <div class="modal-div2">
+            <div class="modal-div">
               <div class="modalDivName">
-                <h2>Navn:</h2>
-                  <input type="text" id="name" name="navn">
+                 <label for="navn">Navn:</label>
+                  <input type="text" id="name" name="navn" required>
                 </div>
                 <div>
                 <div class="modalDivStatus">
-                  <h2>Status:</h2>
-                    <select name="taskStatus" id="dropbtn">
+                  <label for="taskStatus">Status:</label>
+                    <select name="taskStatus" id="dropbtn" required>
                       <option value="">Vælg</option>
                       <option value="0">Ventende</option>
                       <option value="1">Igangværende</option>
@@ -36,19 +37,18 @@
                 </div>
                 </div>
                 <div class="modalDivDesc">
-                  <h2>Beskrivelse:</h2>
-                  <textarea name="beskrivelse" id="description" cols="30" rows="5"></textarea>
+                  <label for="beskrivelse">Beskrivelse:</label>
+                  <textarea name="beskrivelse" id="description" cols="30" rows="5" required></textarea>
                 </div>
               <div class="modalDivDate">
-                <h2>Dato:</h2>
-                <input type="text" id="year" name="dato">
+                <label for="dato">Dato:</label>
+                <input type="date" id="date" name="dato" required>
               </div>
             </div>
             <div class="divBTNS">
               <button class="cancelBTN">Annuller</button>
-              <button type="submit" class="saveBTN">Gem</button>
+              <input type="submit" class="saveBTN">
             </div>
-          </div>
         </form>
       </div>
     </div>
@@ -112,7 +112,27 @@
   };
 
   save.onclick = function() {
+    let a = document.forms["form"]["name"].value;
+    let b = document.forms["form"]["taskStatus"].value;
+    let c = document.forms["form"]["beskrivelse"].value;
+    let d = document.forms["form"]["dato"].value;
+    
+
+    if( a == ""){
+      alert("Navn skal være udfyldt");
+      return false;
+    } else if(b == "") {
+      alert("Status skal være udfyldt");
+      return false;
+    } else if(c == "") {
+      alert("Beskrivelse skal være udfyldt");
+      return false;
+    } else if(d == "") {
+      alert("dato skal være udfyldt");
+      return false;
+    } else{
     modal.style.display = "none";
+    }
   };
 
   window.onclick = function(event) {
