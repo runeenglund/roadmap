@@ -104,7 +104,7 @@
   let save = document.getElementsByClassName("saveBTN")[0];
 
   btn.onclick = function() {
-  modal.style.display = "block";
+    modal.style.display = "block";
   };
 
   cancel.onclick = function() {
@@ -164,7 +164,6 @@
       /* looper gennem dataen */
       for (let i = 0; i < dataTasks.length; i++)
       {
-
         /* Henter dataen fra tabellerne og sætter dem ind i variabler */
         let name = dataTasks[i].navn;
         let eval = dataTasks[i].bedømmelse_id;
@@ -195,7 +194,6 @@
         };
         /* console.log(findQuarter(month)); */
 
-        
         /* appender til html */
         html += "<tr>";
           html += "<td>" + name + "</td>";
@@ -213,7 +211,6 @@
           html += '<td ><h3>Årstal</h3><input type="text" id="name" name="navn"></td>';
           html += '<td ><button class="dropdownDivCloseBtn">Gem</button></td>';
         html += "</tr>";
-        
       };
 
       /* erstater <tbody> af <table> */

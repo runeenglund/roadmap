@@ -73,7 +73,18 @@ body {
     align-content: flex-start;
     flex-wrap: wrap;
     min-width: 200px;
-    min-height: 280px;
+    min-height: 250px;
+}
+
+.modal-content h2 {
+    padding: .2em;
+    font-size: 18px;
+}
+
+.modal-content p {
+    padding: .2em;
+    margin-bottom: 2em;
+    font-size: 14px;
 }
 
 input {
@@ -421,6 +432,7 @@ padding: 5%;
     .modal-div {
         display: block;
         justify-content: space-evenly;
+        width: 50%;
     }
 
     .modalDivName, .modalDivStatus, .modalDivDesc, .modalDivDate {
