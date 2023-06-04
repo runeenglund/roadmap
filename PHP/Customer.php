@@ -38,7 +38,7 @@
     <script>
         /* ajax GET kald */
         let ajax = new XMLHttpRequest();
-        ajax.open("GET", "http://localhost/roadmap/PHP/dbCon/Api.php?action=tasks", true);
+        ajax.open("GET", "http://localhost/roadmap/PHP/dbCon/Api.php?action=jointasks", true);
         ajax.send();
 
         /* modtager respons fra Api.php */
