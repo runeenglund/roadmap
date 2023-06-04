@@ -117,7 +117,6 @@
     let c = document.forms["form"]["beskrivelse"].value;
     let d = document.forms["form"]["dato"].value;
     
-
     if( a == ""){
       alert("Navn skal være udfyldt");
       return false;
