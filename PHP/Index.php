@@ -172,14 +172,6 @@
       /* looper gennem dataen */
       for (let i = 0; i < dataTasks.sort(byDate).length; i++)
       {
-        /* function byDate(a, b) {
-        //chronologically by year, month, then day
-          return new Date(a.dataTasks[i].dato).valueOf() - new Date(b.dataTasks[i].dato).valueOf(); //timestamps
-        }  */
-        
-        /* console.log(dataTasks[i].dato); */
-
-
         /* Henter dataen fra tabellerne og sætter dem ind i variabler */
         let name = dataTasks[i].navn;
         let eval = dataTasks[i].bedømmelse_id;
