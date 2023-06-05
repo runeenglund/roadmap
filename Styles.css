@@ -338,7 +338,12 @@ label {
     font-weight: bold;
     cursor: pointer;
     float: right;
+    border: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border-radius: 5px;
     margin-top: -10%;
+    padding: 8px 10px;
 }
 
 #overlay {
