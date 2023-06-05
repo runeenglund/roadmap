@@ -246,9 +246,10 @@
           dropdownEditBox[i].style.display = "none";
         };
       }; 
+      
+      /* Sorterer datoerne kronologisk */
       function byDate(a, b) {
-      //chronologically by year, month, then day
-        return new Date(a.dato).valueOf() - new Date(b.dato).valueOf(); //timestamps
+        return new Date(a.dato).valueOf() - new Date(b.dato).valueOf(); 
       } 
       console.log(dataTasks.sort(byDate));
     };
