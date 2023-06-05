@@ -215,10 +215,10 @@
           html += '<td><span class="dropdownEditArrow"><i class="fa fa-angle-down" style="font-size:36px"></i></span></td>';
         html += "</tr>";
         html += '<tr class="dropdownEditDiv">';
-          html += '<td ><h3>Navn</h3><input type="text" id="name" name="navn"></td>';
-          html += '<td ><h3>Status</h3><input type="text" id="name" name="navn"></td>';
-          html += '<td ><h3>Beskrivelse</h3><input type="text" id="name" name="navn"></td>';
-          html += '<td ><h3>Årstal</h3><input type="text" id="name" name="navn"></td>';
+          html += '<td ><p>Navn</p><input type="text" id="name" name="navn"></td>';
+          html += '<td ><p>Status</p><input type="text" id="name" name="navn"></td>';
+          html += '<td ><p>Beskrivelse</p><input type="text" id="name" name="navn"></td>';
+          html += '<td ><p>Årstal</p><input type="text" id="name" name="navn"></td>';
           html += '<td ><button class="dropdownDivCloseBtn">Gem</button></td>';
         html += "</tr>";
       };

@@ -12,7 +12,10 @@ body {
 
 html, 
 p,
-a {
+a,
+label,
+td {
+    font-size: 16px !important;
 font-family: 'Roboto' !important;
 }
 
@@ -20,7 +23,8 @@ html,
 h1,
 h2,
 h3,
-h4 {
+h4,
+th {
 font-family: 'Roboto Condensed' !important;
 }
 
@@ -184,7 +188,7 @@ label {
     width: 100%;
     border-radius: 5px 5px 0 0;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    margin: auto 100px;
+    margin: auto 70px;
     height: 100px;
 }
 
@@ -224,7 +228,7 @@ label {
     width: 100%;
     border-radius: 5px 5px 0 0;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    margin:  auto 100px;
+    margin:  auto 70px;
     height: 100px;
 }
 
@@ -258,6 +262,10 @@ label {
     background-color: #FEFEFE;
 }
 
+.content-table-top3 th, .content-table th {
+    font-size: 18px;
+}
+
 .dropdownEditArrow{
     cursor: pointer;
 }
@@ -274,7 +282,7 @@ label {
 
 .dropdownEditDiv td {
     background-color: #FEFEFE;
-    padding: 10px 93px;
+    padding: 10px 85px;
 }
 
 .dropdownDivCloseBtn{
@@ -418,7 +426,7 @@ padding: 5%;
 
     .dropdownEditDiv td {
         background-color: #FEFEFE;
-        padding: 10px 79px;
+        padding: 10px 71px;
     }
 
     .content-table th, .content-table td {
@@ -433,7 +441,7 @@ padding: 5%;
 
     .dropdownEditDiv td {
         background-color: #FEFEFE;
-        padding: 10px 65px;
+        padding: 10px 57px;
     }
 
     .content-table th, .content-table td {
@@ -444,22 +452,37 @@ padding: 5%;
 
 @media (max-width: 1500px ) {
     .content-table-top3 th, .content-table-top3 td {
-        padding: 10px 50px;
-    }
-
-    .content-table th, .content-table td {
-        padding: 10px 50px;
-    }
-
-}
-
-@media (max-width: 1500px ) {
-    .content-table-top3 th, .content-table-top3 td {
         padding: 10px 30px;
     }
 
     .content-table th, .content-table td {
         padding: 10px 30px;
+    }
+
+    .dropdownEditDiv td {
+        background-color: #FEFEFE;
+        padding: 10px 8px;
+    }
+
+    .dropdownEditDiv input {
+        max-width: 174px;
+    }
+
+    html, 
+    h1,
+    h2,
+    h3,
+    h4,
+    th {
+        font-size: 16px !important;
+    }
+
+    html, 
+    p,
+    a,
+    label,
+    td {
+        font-size: 14px !important;
     }
 
 }
