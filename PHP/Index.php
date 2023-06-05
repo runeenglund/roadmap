@@ -20,7 +20,7 @@
       <div class="modal-content">
         <h2>Oprettelse af nye features</h2>
         <p>Herunder kan du oprette nye features</p>
-        <form id="form" action="http://localhost/roadmap/PHP/dbCon/Api.php?action=addtasks" method="post">
+        <form id="form" >
             <div class="modal-div">
               <div class="modalDivName">
                  <label for="navn">Navn:</label>
@@ -242,7 +242,7 @@
  
 
 
-  /* ajax POST kald(VIRKER IKKE)
+  /* ajax POST kald(VIRKER IKKE) */
   let form = document.querySelector('#form');
 
   form.addEventListener('submit',(e) => {
@@ -251,7 +251,7 @@
     let formData = new FormData(form);
 
     let res = Object.fromEntries(formData);
-    let payload = JSON.stringify(form);
+    let payload = JSON.stringify(res);
     console.log(res);
     console.log(payload);
 
@@ -277,7 +277,7 @@
       
     .catch((error) => {
       console.log(error)
-    }) */
+    })
 
   });  
 </script>

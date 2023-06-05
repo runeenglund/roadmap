@@ -49,20 +49,19 @@
     }
     
     if($action=='addtasks'){
-        $navn = $_POST['navn'];
+        /* $navn = $_POST['navn']; 
         $taskStatus = $_POST['taskStatus'];
         $beskrivelse = $_POST['beskrivelse'];
-        $dato = $_POST['dato'];
-
-       
-       
+        $dato = $_POST['dato']; */
+        
+        /* echo $navn; */
 
         if(mysqli_connect_errno()){
             die("connection error: ". mysqli_connect_errno());
         }
      
         $stmt = $conn->prepare("INSERT INTO tasks (navn, taskStatus, beskrivelse, dato) VALUES (?, ?, ?, ?)");
-       
+           /* echo $stmt; */
        /*  $stmt = mysqli_stmt_init($conn); */
 
       /*   if( ! mysqli_stmt_prepare($stmt, $sql)) {
@@ -70,8 +69,13 @@
 
         } */
 
+        
+
+        
+
         $stmt->bind_param( "sisi", $navn, $taskStatus, $beskrivelse, $dato);
         /* mysqli_stmt_execute($stmt) */;
+        
         $stmt->execute();
         $stmt->close();
 
