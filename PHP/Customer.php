@@ -56,8 +56,15 @@
 
             console.log(dataTasks);
 
+            /* Sorterer datoerne kronologisk */
+            function byDate(a, b) {
+                return new Date(a.dato).valueOf() - new Date(b.dato).valueOf(); 
+            } 
+
+            console.log(dataTasks.sort(byDate));
+
             /* looper gennem dataen */
-            for (let i = 0; i < dataTasks.length; i++)
+            for (let i = 0; i < dataTasks.sort(byDate).length; i++)
             {
                 /* Henter dataen fra tabellerne og sætter dem ind i variabler */
                 let name = dataTasks[i].navn;
