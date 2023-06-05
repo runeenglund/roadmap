@@ -1,13 +1,35 @@
-/* -----------------Employee------------------ */
+:root {
+  --darkblue: #152F7B;
+  --red: #F06F63;
+  --green:#22C55E;
+  --white:#fff;
+}
 
 body {
     background-color: #2047B9;
     margin: 0;
 }
 
+html, 
+p,
+a {
+font-family: 'Roboto' !important;
+}
+
+html, 
+h1,
+h2,
+h3,
+h4 {
+font-family: 'Roboto Condensed' !important;
+}
+
+
+/* -----------------Employee------------------ */
+
 #opretBTN {
-    background-color: #F06F63;
-    color: #fff;
+    background-color: var(--red);
+    color: var(--white);
     padding: 8px 10px;
     justify-content: center;
     margin: 50px 20px 0px 100px;
@@ -20,8 +42,8 @@ body {
 }
 
 #switchBTN {
-    background-color: #F06F63;
-    color: #fff;
+    background-color: var(--red);
+    color: var(--white);
     padding: 8px 10px;
     justify-content: center;
     margin: 50px 100px 0px 100px;
@@ -36,7 +58,7 @@ body {
 
 .headerTitle {
     margin: 50px 20px 0px 100px;
-    color: #fff;
+    color: var(--white);
 }
 
 .modal {
@@ -110,8 +132,8 @@ input {
 }
 
 .saveBTN {
-    background-color: #16A34A;
-    color: #fff;
+    background-color: var(--green);
+    color: var(--white);
     padding: 8px 38px;
     font-weight: 600;
     font-size: 14px;
@@ -125,8 +147,8 @@ input {
 }
 
 .cancelBTN {
-    background-color: #F06F63;
-    color: #fff;
+    background-color: var(--red);
+    color: var(--white);
     padding: 8px 10px;
     font-weight: 600;
     font-size: 14px;
@@ -167,8 +189,8 @@ label {
 }
 
 .content-table-top3 thead tr {
-    background-color: #152F7B;
-    color: #ffffff;
+    background-color: var(--darkblue);
+    color: var(--white);
     text-align: left;
     font-weight: bold;
 }
@@ -207,8 +229,8 @@ label {
 }
 
 .content-table thead tr {
-    background-color: #152F7B;
-    color: #ffffff;
+    background-color: var(--darkblue);
+    color: var(--white);
     text-align: left;
     font-weight: bold;
 }
@@ -256,8 +278,8 @@ label {
 }
 
 .dropdownDivCloseBtn{
-    background-color: #F06F63;
-    color: #fff;
+    background-color: var(--red);
+    color: var(--white);
     padding: 8px 16px;
     cursor: pointer;
 }
@@ -271,15 +293,15 @@ label {
 }
 
 .customer-box{
-    background-color: #152F7B;
-    color: #fff;
+    background-color: var(--darkblue);
+    color: var(--white);
     width: 400px;
     padding: 10px;
     display: table;
 }
 
 .customer-box .overlay-link{
-    color: #F06F63;
+    color: var(--red);
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
@@ -288,7 +310,7 @@ label {
 
 .customer-publication{
     display: flex;
-    background-color: #F06F63;
+    background-color: var(--red);
     float: right;
     justify-content: center;
     width: 40%;
@@ -312,7 +334,7 @@ label {
 }
 
 .status-funktion{
-    color: #22C55E;
+    color: var(--green);
 }
 
   #svg-line-box{
@@ -326,14 +348,14 @@ label {
     padding-right: 5%;
     padding-left: 5%;
     padding-top: 5%;
-    color: #fff;
+    color: var(--white);
 }
 
 #workerBTN {
     height: 50px;
-    background-color: #F06F63;
+    background-color: var(--red);
     justify-content: center;
-    color: #fff;
+    color: var(--white);
     font-weight: bold;
     cursor: pointer;
     float: right;
@@ -377,8 +399,8 @@ padding: 5%;
 }
 
 #submitBTN{
-    background-color: #F06F63;
-    color: #fff;
+    background-color: var(--red);
+    color: var(--white);
     font-weight: bold;
     cursor: pointer;
     align-self: flex-end;
