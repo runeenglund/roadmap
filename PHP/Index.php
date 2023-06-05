@@ -24,12 +24,12 @@
             <div class="modal-div">
               <div class="modalDivName">
                  <label for="navn">Navn:</label>
-                  <input type="text" id="name" name="navn" required>
+                  <input type="text" id="name" name="navn" >
                 </div>
                 <div>
                 <div class="modalDivStatus">
                   <label for="taskStatus">Status:</label>
-                    <select name="taskStatus" id="dropbtn" required>
+                    <select name="taskStatus" id="dropbtn" >
                       <option value="">Vælg</option>
                       <option value="0">Ventende</option>
                       <option value="1">Igangværende</option>
@@ -38,11 +38,11 @@
                 </div>
                 <div class="modalDivDesc">
                   <label for="beskrivelse">Beskrivelse:</label>
-                  <textarea name="beskrivelse" id="description" cols="30" rows="5" required></textarea>
+                  <textarea name="beskrivelse" id="description" cols="30" rows="5" ></textarea>
                 </div>
               <div class="modalDivDate">
                 <label for="dato">Dato:</label>
-                <input type="date" id="date" name="dato" required>
+                <input type="date" id="date" name="dato" >
               </div>
             </div>
             <div class="divBTNS">
@@ -242,7 +242,7 @@
  
 
 
-  /* ajax POST kald(VIRKER IKKE) */
+  /* ajax POST kald(VIRKER IKKE)
   let form = document.querySelector('#form');
 
   form.addEventListener('submit',(e) => {
@@ -277,7 +277,7 @@
       
     .catch((error) => {
       console.log(error)
-    })
+    }) */
 
   });  
 </script>
