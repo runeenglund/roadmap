@@ -161,11 +161,12 @@
       let dataTasks = data.tasks;
 
       console.log(dataTasks);
-      /* Sorterer datoerne kronologisk */
 
+      /* Sorterer datoerne kronologisk */
       function byDate(a, b) {
         return new Date(a.dato).valueOf() - new Date(b.dato).valueOf(); 
       } 
+
       console.log(dataTasks.sort(byDate));
 
       /* looper gennem dataen */
@@ -208,9 +209,6 @@
           }
         };
         /* console.log(findQuarter(month)); */
-
-        
-
 
         /* appender til html */
         html += "<tr>";
@@ -257,26 +255,31 @@
 
 
 
- 
-
 
   /* ajax POST kald */
   let form = document.querySelector('#form');
 
+  /* sætter en eventlistener på typen 'submit' i formen */
   form.addEventListener('submit',(e) => {
     e.preventDefault();  
 
+    /* Laver en variabel, hvor dataen fra formen om bliver sat ind som et js objeckt */
     let formData = new FormData(form);
 
+    /* Laver key/value pairs'ne om til et js objekt */
     let res = Object.fromEntries(formData);
+
+    /* Laver js objektet om til et JSON objekt */
     let payload = JSON.stringify(res);
     console.log(res);
     console.log(payload);
 
+    /* Tjekker dataen fra de forskellige inputs i formen */
     for (item of formData) {
       console.log(item[0],item[1]);
     }
 
+    /* Sender JSON objektet til api url'en, sætter metoden som en post metode og sender variablen 'payload' med som 'body'. */
     fetch('http://localhost/roadmap/PHP/dbCon/Api.php?action=addtasks', {
       method:'POST',
       body: payload,
@@ -286,12 +289,14 @@
       }
     })
     
+    /* Tester om posten er succesfuld */
     .then((res) => {
       if (res.status === 200) {
         console.log("Post successfully created!")
       }
     })
       
+    /* Fanger fejl hvis der er nogen */
     .catch((error) => {
       console.log(error)
     })
