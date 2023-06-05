@@ -130,6 +130,7 @@
       alert("dato skal være udfyldt");
       return false;
     } else{
+      alert("Ny feature oprettet");
     modal.style.display = "none";
     }
   };
@@ -164,6 +165,14 @@
       /* looper gennem dataen */
       for (let i = 0; i < dataTasks.length; i++)
       {
+        /* function byDate(a, b) {
+        //chronologically by year, month, then day
+          return new Date(a.dataTasks[i].dato).valueOf() - new Date(b.dataTasks[i].dato).valueOf(); //timestamps
+        }  */
+        
+        /* console.log(dataTasks[i].dato); */
+
+
         /* Henter dataen fra tabellerne og sætter dem ind i variabler */
         let name = dataTasks[i].navn;
         let eval = dataTasks[i].bedømmelse_id;
@@ -193,6 +202,9 @@
           }
         };
         /* console.log(findQuarter(month)); */
+
+        
+
 
         /* appender til html */
         html += "<tr>";
@@ -233,7 +245,12 @@
         function closeDropdownBox() {
           dropdownEditBox[i].style.display = "none";
         };
-      };     
+      }; 
+      function byDate(a, b) {
+      //chronologically by year, month, then day
+        return new Date(a.dato).valueOf() - new Date(b.dato).valueOf(); //timestamps
+      } 
+      console.log(dataTasks.sort(byDate));
     };
   };
 
