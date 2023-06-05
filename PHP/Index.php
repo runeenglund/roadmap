@@ -242,7 +242,7 @@
  
 
 
-  /* ajax POST kald(VIRKER IKKE) */
+  /* ajax POST kald */
   let form = document.querySelector('#form');
 
   form.addEventListener('submit',(e) => {
@@ -267,7 +267,6 @@
         'content-Type': 'application/json'
       }
     })
-    .then((res) => res.json() )
     
     .then((res) => {
       if (res.status === 200) {
