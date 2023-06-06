@@ -150,7 +150,7 @@
   /* modtager respons fra Api.php */
   ajax.onreadystatechange = function(){
     if(this.readyState == 4 && this.status == 200) {
-      console.log(this.responseText);
+      /* console.log(this.responseText); */
       let data = JSON.parse(this.responseText);
       /* console.log(data); */
 
@@ -174,7 +174,7 @@
           let map = {};
           for ( var i = 0; i < dataTasks.length; i++ ) {
               map[dataTasks[i].bedømmelse_id] = ~~map[dataTasks[i].bedømmelse] + 1;
-              console.log(JSON.stringify(dataTasks[i].bedømmelse_id));
+              console.log(JSON.stringify(dataTasks[i].bedømmelse_id + "_" + dataTasks[i].bedømmelse));
           }
           return map;
       }
@@ -182,20 +182,22 @@
       let result = countOccurrencesOfEvaluations(dataTasks);
       console.log(JSON.stringify(result));
       console.log(result);
-      
-     
+
+      let { "1": bedømmelse_id, ...rest } = result;
+      let obj = { "0": 1, ...rest }
+
+      console.log(obj);
 
       /* looper gennem dataen */
       for (let i = 0; i < dataTasks.sort(byDate).length; i++)
       {
         /* Henter dataen fra tabellerne og sætter dem ind i variabler */
         let name = dataTasks[i].navn;
-        let eval = result[i];
+        let eval = dataTasks[i].bedømmelse;
         let eval_id = dataTasks[i].bedømmelse_id;
         let status = dataTasks[i].taskStatus;
         let date = dataTasks[i].dato;
         let comment = dataTasks[i].kommentar;
-        console.log(eval);
 
         /* Ternary operator for status, fungerer som en if-statement. Hvis status er 1 printer den igangværende, hvis status er andet end 1 printer den ventende */
         let statusCurrentWaiting = (status == 1) ? "Igangværende":"Ventende";
@@ -235,7 +237,7 @@
               html += '<td ><p>Status</p><input type="text" id="status" name="status1"></td>';
               html += '<td ><p>Beskrivelse</p><input type="text" id="description" name="description1"></td>';
               html += '<td ><p>Dato</p><input type="text" id="date" name="date1"></td>';
-              html += '<td ><button class="dropdownDivCloseBtn">Gem</button></td>';
+              html += '<td ><button class="dropdownDivCancelBtn">Annuller</button><button class="dropdownDivCloseBtn">Gem</button></td>';
         html += "</tr>";
       };
 
@@ -247,10 +249,12 @@
       let dropdownEditArrow = document.querySelectorAll(".dropdownEditArrow");
       let dropdownEditBox = document.getElementsByClassName("dropdownEditDiv");
       let dropdownDivCloseBtn = document.getElementsByClassName("dropdownDivCloseBtn");
+      let dropdownDivCancelBtn = document.getElementsByClassName("dropdownDivCancelBtn");
       
       for (let i = 0; i < dropdownEditArrow.length; i++) {
         dropdownEditArrow[i].addEventListener("click", openDropdownBox);
         dropdownDivCloseBtn[i].addEventListener("click", closeDropdownBox);
+        dropdownDivCancelBtn[i].addEventListener("click", cancelCloseDropdownBox);
 
         function openDropdownBox() {
           dropdownEditBox[i].style.display = "block";
@@ -274,6 +278,11 @@
             dropdownEditBox[i].style.display = "none";
           }
         };
+
+        function cancelCloseDropdownBox() {
+            dropdownEditBox[i].style.display = "none";
+        };
+
       }; 
     };
   };
@@ -296,8 +305,8 @@
 
     /* Laver js objektet om til et JSON objekt */
     let payload = JSON.stringify(res);
-    console.log(res);
-    console.log(payload);
+   /*  console.log(res);
+    console.log(payload); */
 
     /* Tjekker dataen fra de forskellige inputs i formen */
     for (item of formData) {
