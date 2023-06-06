@@ -174,12 +174,15 @@
           let map = {};
           for ( var i = 0; i < dataTasks.length; i++ ) {
               map[dataTasks[i].bedømmelse_id] = ~~map[dataTasks[i].bedømmelse] + 1;
+              console.log(JSON.stringify(dataTasks[i].bedømmelse_id));
           }
           return map;
       }
 
       let result = countOccurrencesOfEvaluations(dataTasks);
       console.log(JSON.stringify(result));
+      console.log(result);
+      
      
 
       /* looper gennem dataen */
@@ -187,11 +190,12 @@
       {
         /* Henter dataen fra tabellerne og sætter dem ind i variabler */
         let name = dataTasks[i].navn;
-        let eval = dataTasks[i].bedømmelse;
+        let eval = result[i];
         let eval_id = dataTasks[i].bedømmelse_id;
         let status = dataTasks[i].taskStatus;
         let date = dataTasks[i].dato;
         let comment = dataTasks[i].kommentar;
+        console.log(eval);
 
         /* Ternary operator for status, fungerer som en if-statement. Hvis status er 1 printer den igangværende, hvis status er andet end 1 printer den ventende */
         let statusCurrentWaiting = (status == 1) ? "Igangværende":"Ventende";
@@ -227,11 +231,11 @@
           html += '<td><span class="dropdownEditArrow"><i class="fa fa-angle-down" style="font-size:36px"></i></span></td>';
         html += "</tr>";
         html += '<tr class="dropdownEditDiv">';
-          html += '<td ><p>Navn</p><input type="text" id="name" name="navn"></td>';
-          html += '<td ><p>Status</p><input type="text" id="name" name="navn"></td>';
-          html += '<td ><p>Beskrivelse</p><input type="text" id="name" name="navn"></td>';
-          html += '<td ><p>Årstal</p><input type="text" id="name" name="navn"></td>';
-          html += '<td ><button class="dropdownDivCloseBtn">Gem</button></td>';
+              html += '<td ><p>Navn</p><input type="text" id="name" name="name1"></td>';
+              html += '<td ><p>Status</p><input type="text" id="status" name="status1"></td>';
+              html += '<td ><p>Beskrivelse</p><input type="text" id="description" name="description1"></td>';
+              html += '<td ><p>Dato</p><input type="text" id="date" name="date1"></td>';
+              html += '<td ><button class="dropdownDivCloseBtn">Gem</button></td>';
         html += "</tr>";
       };
 
@@ -253,7 +257,22 @@
         };
 
         function closeDropdownBox() {
-          dropdownEditBox[i].style.display = "none";
+          if( document.getElementById('name').value == ""){
+            alert("Navn skal være udfyldt");
+            return false;
+          } else if(document.getElementById('status').value == "") {
+            alert("Status skal være udfyldt");
+            return false;
+          } else if(document.getElementById('description').value == "") {
+            alert("Beskrivelse skal være udfyldt");
+            return false;
+          } else if(document.getElementById('date').value == "") {
+            alert("dato skal være udfyldt");
+            return false;
+          } else{
+            alert("Ny feature oprettet");
+            dropdownEditBox[i].style.display = "none";
+          }
         };
       }; 
     };
