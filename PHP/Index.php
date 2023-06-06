@@ -169,7 +169,7 @@
 
       /* console.log(dataTasks.sort(byDate)); */
 
-
+      /* Tæller hvor mange bedømmelser hver task har fået gennem bedømmelses_id, som definerer hvilken task bedømmelserne hører til, og selve bedømmelsen, som skal er en bolean */
       let countOccurrencesOfEvaluations = (dataTasks) => {
           let map = {};
           for ( var i = 0; i < dataTasks.length; i++ ) {
