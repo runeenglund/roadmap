@@ -178,6 +178,7 @@
         let status = dataTasks[i].taskStatus;
         let date = dataTasks[i].dato;
         let comment = dataTasks[i].kommentar;
+        console.log(eval);  
 
         /* Ternary operator for status, fungerer som en if-statement. Hvis status er 1 printer den igangværende, hvis status er andet end 1 printer den ventende */
         let statusCurrentWaiting = (status == 1) ? "Igangværende":"Ventende";
