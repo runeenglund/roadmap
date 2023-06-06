@@ -56,14 +56,14 @@
             /* Hack til at tilgå objektet rigtigt */
             let dataTasks = data.tasks;
 
-            console.log(dataTasks);
+            /* console.log(dataTasks); */
 
             /* Sorterer datoerne kronologisk */
             function byDate(a, b) {
                 return new Date(a.dato).valueOf() - new Date(b.dato).valueOf(); 
             } 
 
-            console.log(dataTasks.sort(byDate));
+            /* console.log(dataTasks.sort(byDate)); */
 
             /* looper gennem dataen */
             for (let i = 0; i < dataTasks.sort(byDate).length; i++)

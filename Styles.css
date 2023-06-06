@@ -387,7 +387,11 @@ label {
     background-color: rgba(0,0,0,0.5);
     z-index: 5;
     cursor: pointer;
-  }
+}
+
+#overlay-content h2{
+    display: contents;
+}
 
 .overlay-box{
 background-color: #2A5EF6;
@@ -398,8 +402,12 @@ left: 50%;
 transform: translate(-50%,-50%);
 -ms-transform: translate(-50%,-50%);
 width: 60%;
-height: 60%;
+height: 45%;
 padding: 5%;
+}
+
+.overlay-box h2 {
+    padding-top: 90px;
 }
 
 .comment{
@@ -410,6 +418,8 @@ padding: 5%;
     background-color: var(--red);
     color: var(--white);
     font-weight: bold;
+    border: none;
+    border-radius: 3px;
     cursor: pointer;
     align-self: flex-end;
     padding: 2%;

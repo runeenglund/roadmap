@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Medarbejder</title>
     <link rel="stylesheet" type="text/css" href="../Styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
@@ -28,7 +28,6 @@
                  <label for="navn">Navn:</label>
                   <input type="text" id="name" name="navn" >
                 </div>
-                <div>
                 <div class="modalDivStatus">
                   <label for="taskStatus">Status:</label>
                     <select name="taskStatus" id="dropbtn" >
@@ -37,19 +36,19 @@
                       <option value="1">Igangværende</option>
                     </select>
                 </div>
-                </div>
                 <div class="modalDivDesc">
                   <label for="beskrivelse">Beskrivelse:</label>
                   <textarea name="beskrivelse" id="description" cols="30" rows="5" ></textarea>
                 </div>
-              <div class="modalDivDate">
-                <label for="dato">Dato:</label>
-                <input type="date" id="date" name="dato" >
+                <div class="modalDivDate">
+                  <label for="dato">Dato:</label>
+                  <input type="date" id="date" name="dato" >
+                </div>
               </div>
-            </div>
-            <div class="divBTNS">
-              <button class="cancelBTN">Annuller</button>
-              <input type="submit" class="saveBTN">
+              <div class="divBTNS">
+                <button class="cancelBTN">Annuller</button>
+                <input type="submit" class="saveBTN">
+              </div>
             </div>
         </form>
       </div>
@@ -73,10 +72,9 @@
       </table>
     </div>
 
-        
-        <div class ="headerTitle">
-          <h1>Kommende funktioner</h1>
-        </div>
+      <div class ="headerTitle">
+        <h1>Kommende funktioner</h1>
+      </div>
       <div class="table">
         <table class="content-table">
           <thead>
@@ -162,14 +160,14 @@
       /* Hack til at tilgå objektet rigtigt */
       let dataTasks = data.tasks;
 
-      console.log(dataTasks);
+      /* console.log(dataTasks); */
 
       /* Sorterer datoerne kronologisk */
       function byDate(a, b) {
         return new Date(a.dato).valueOf() - new Date(b.dato).valueOf(); 
       } 
 
-      console.log(dataTasks.sort(byDate));
+      /* console.log(dataTasks.sort(byDate)); */
 
       /* looper gennem dataen */
       for (let i = 0; i < dataTasks.sort(byDate).length; i++)
