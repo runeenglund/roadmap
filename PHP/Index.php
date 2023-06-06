@@ -160,7 +160,7 @@
       /* Hack til at tilgå objektet rigtigt */
       let dataTasks = data.tasks;
 
-      /* console.log(dataTasks); */
+      console.log(dataTasks);
 
       /* Sorterer datoerne kronologisk */
       function byDate(a, b) {
@@ -169,16 +169,29 @@
 
       /* console.log(dataTasks.sort(byDate)); */
 
+
+      let countOccurrencesOfEvaluations = (dataTasks) => {
+          let map = {};
+          for ( var i = 0; i < dataTasks.length; i++ ) {
+              map[dataTasks[i].bedømmelse_id] = ~~map[dataTasks[i].bedømmelse] + 1;
+          }
+          return map;
+      }
+
+      let result = countOccurrencesOfEvaluations(dataTasks);
+      console.log(JSON.stringify(result));
+     
+
       /* looper gennem dataen */
       for (let i = 0; i < dataTasks.sort(byDate).length; i++)
       {
         /* Henter dataen fra tabellerne og sætter dem ind i variabler */
         let name = dataTasks[i].navn;
-        let eval = dataTasks[i].bedømmelse_id;
+        let eval = dataTasks[i].bedømmelse;
+        let eval_id = dataTasks[i].bedømmelse_id;
         let status = dataTasks[i].taskStatus;
         let date = dataTasks[i].dato;
         let comment = dataTasks[i].kommentar;
-        console.log(eval);  
 
         /* Ternary operator for status, fungerer som en if-statement. Hvis status er 1 printer den igangværende, hvis status er andet end 1 printer den ventende */
         let statusCurrentWaiting = (status == 1) ? "Igangværende":"Ventende";
