@@ -174,7 +174,7 @@
           let map = {};
           for ( var i = 0; i < dataTasks.length; i++ ) {
               map[dataTasks[i].bedømmelse_id] = ~~map[dataTasks[i].bedømmelse] + 1;
-              console.log(JSON.stringify(dataTasks[i].bedømmelse_id + "_" + dataTasks[i].bedømmelse));
+              console.log(JSON.stringify(dataTasks[i].bedømmelse_id + ":" + dataTasks[i].bedømmelse));
           }
           return map;
       }
