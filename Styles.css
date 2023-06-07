@@ -283,7 +283,7 @@ label {
 
 .dropdownEditDiv td {
     background-color: #FEFEFE;
-    padding: 10px 100px;
+    padding: 10px 96px;
 }
 
 .dropdownDivCancelBtn{
@@ -292,7 +292,7 @@ label {
     padding: 8px 6px;
     cursor: pointer;
     margin-bottom: 10px;
-    margin-right: 4px;
+    margin-right: 8px;
     border: none;
 }
 
@@ -443,7 +443,7 @@ padding: 5%;
 
 @media (max-width: 1830px ) {
     .content-table-top3 th, .content-table-top3 td {
-        padding: 10px 80px;
+        padding: 10px 78px;
     }
 
     .dropdownEditDiv td {
