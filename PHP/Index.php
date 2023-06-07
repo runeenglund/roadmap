@@ -308,7 +308,7 @@
       let date = dataTasks[i].dato;
       let comment = dataTasks[i].kommentar;
 
-      /* Ternary operator for status, fungerer som en if-statement. Hvis status er 1 printer den igangværende, hvis status er andet end 1 printer den ventende */
+      /* Ternary operator for status, fungerer som en if-statement, fylder bare ikke så meget. Hvis status er 1 printer den igangværende, hvis status er andet end 1 printer den ventende */
       let statusCurrentWaiting = (status == 1) ? "Igangværende":"Ventende";
 
       /* Dato split. Splitter datoen ind i år, måneder, dage */
