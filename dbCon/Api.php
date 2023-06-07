@@ -1,6 +1,6 @@
 <?php
     $host = "127.0.0.1"; //Host name 
-    $user = "root"; // User 
+    $user = "root"; // User
     $password = ""; // Password 
     $dbname = "roadmap"; // Database name
 
