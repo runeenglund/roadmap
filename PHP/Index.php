@@ -158,7 +158,7 @@
       let html = "";
       
       /* Hack til at tilgå objektet rigtigt */
-      let dataTasks = data.tasks;
+      var dataTasks = data.tasks;
 
       console.log(dataTasks);
 
@@ -169,7 +169,8 @@
 
       /* console.log(dataTasks.sort(byDate)); */
 
-      /* Tæller hvor mange bedømmelser hver task har fået gennem bedømmelses_id, som definerer hvilken task bedømmelserne hører til, og selve bedømmelsen, som skal være en bolean */
+      /* Tæller hvor mange bedømmelser hver task har fået gennem bedømmelses_id, som definerer hvilken task bedømmelserne hører til, og selve bedømmelsen fra den joinede tabel,
+       som skal være en bolean */
       let countOccurrencesOfEvaluations = (dataTasks) => {
           let map = {};
           for ( var i = 0; i < dataTasks.length; i++ ) {
@@ -188,16 +189,23 @@
 
       console.log(obj);
 
+     let top3DateFilter = dataTasks.sort(byDate);
+     console.log(top3DateFilter);
+
+     var top3DatatasksSliced = top3DateFilter.slice(0,3);
+
+    console.log(top3DatatasksSliced);
+
       /* looper gennem dataen */
-      for (let i = 0; i < dataTasks.sort(byDate).length; i++)
+      for (let i = 0; i < top3DatatasksSliced.sort(byDate).length; i++)
       {
         /* Henter dataen fra tabellerne og sætter dem ind i variabler */
-        let name = dataTasks[i].navn;
-        let eval = dataTasks[i].bedømmelse;
-        let eval_id = dataTasks[i].bedømmelse_id;
-        let status = dataTasks[i].taskStatus;
-        let date = dataTasks[i].dato;
-        let comment = dataTasks[i].kommentar;
+        let name = top3DatatasksSliced[i].navn;
+        let eval = top3DatatasksSliced[i].bedømmelse;
+        let eval_id = top3DatatasksSliced[i].bedømmelse_id;
+        let status = top3DatatasksSliced[i].taskStatus;
+        let date = top3DatatasksSliced[i].dato;
+        let comment = top3DatatasksSliced[i].kommentar;
 
         /* Ternary operator for status, fungerer som en if-statement. Hvis status er 1 printer den igangværende, hvis status er andet end 1 printer den ventende */
         let statusCurrentWaiting = (status == 1) ? "Igangværende":"Ventende";
@@ -233,17 +241,16 @@
           html += '<td><span class="dropdownEditArrow"><i class="fa fa-angle-down" style="font-size:36px"></i></span></td>';
         html += "</tr>";
         html += '<tr class="dropdownEditDiv">';
-              html += '<td ><p>Navn</p><input type="text" id="name" name="name1"></td>';
-              html += '<td ><p>Status</p><input type="text" id="status" name="status1"></td>';
-              html += '<td ><p>Beskrivelse</p><input type="text" id="description" name="description1"></td>';
-              html += '<td ><p>Dato</p><input type="text" id="date" name="date1"></td>';
-              html += '<td ><button class="dropdownDivCancelBtn">Annuller</button><button class="dropdownDivCloseBtn">Gem</button></td>';
+          html += '<td ><p>Navn</p><input type="text" id="name" name="name1"></td>';
+          html += '<td ><p>Status</p><input type="text" id="status" name="status1"></td>';
+          html += '<td ><p>Beskrivelse</p><input type="text" id="description" name="description1"></td>';
+          html += '<td ><p>Dato</p><input type="text" id="date" name="date1"></td>';
+          html += '<td ><button class="dropdownDivCancelBtn">Annuller</button><button class="dropdownDivCloseBtn">Gem</button></td>';
         html += "</tr>";
       };
 
       /* erstater <tbody> af <table> */
       document.getElementById("dataTop3").innerHTML += html;
-      document.getElementById("mainTableRows").innerHTML += html;
 
       /* Laver dropdown rediger bokse til hver af taskene */
       let dropdownEditArrow = document.querySelectorAll(".dropdownEditArrow");
@@ -280,12 +287,118 @@
         };
 
         function cancelCloseDropdownBox() {
-            dropdownEditBox[i].style.display = "none";
+          dropdownEditBox[i].style.display = "none";
         };
-
       }; 
     };
+    
+    console.log()
+
+    /* html værdier for <tbody> */
+    let html = "";
+
+    /* Sorterer datoerne kronologisk */
+    function byDate(a, b) {
+      return new Date(a.dato).valueOf() - new Date(b.dato).valueOf(); 
+    } 
+
+        /* looper gennem dataen */
+    for (let i = 0; i < dataTasks.sort(byDate).length; i++)
+    {
+      /* Henter dataen fra tabellerne og sætter dem ind i variabler */
+      let name = dataTasks[i].navn;
+      let eval = dataTasks[i].bedømmelse;
+      let eval_id = dataTasks[i].bedømmelse_id;
+      let status = dataTasks[i].taskStatus;
+      let date = dataTasks[i].dato;
+      let comment = dataTasks[i].kommentar;
+
+      /* Ternary operator for status, fungerer som en if-statement. Hvis status er 1 printer den igangværende, hvis status er andet end 1 printer den ventende */
+      let statusCurrentWaiting = (status == 1) ? "Igangværende":"Ventende";
+
+      /* Dato split. Splitter datoen ind i år, måneder, dage */
+      let dateSplit = date.split("-");
+      let year = dateSplit[0];
+      let month = dateSplit[1];
+      let day = dateSplit[2];
+
+      /* sorterer måneder ind i kvartaler med en if-statement */
+      let findQuarter = (monthQuarter = 1) => {
+        if (monthQuarter <= 3) {
+            return 1
+        } else if (monthQuarter <= 6) {
+            return 2
+        } else if (monthQuarter <= 9) {
+            return 3
+        } else if (monthQuarter <= 12) {
+            return 4
+        }
+      };
+      /* console.log(findQuarter(month)); */
+
+      /* appender til html */
+      html += "<tr>";
+        html += "<td>" + name + "</td>";
+        html += "<td>" + eval + "</td>";
+        html += "<td>" + statusCurrentWaiting + "</td>";
+        html += '<td><i class="fa fa-comments" aria-hidden="true" style="font-size:20px"></i>' + comment + '</td>';
+        html += "<td>" + findQuarter(month); + "</td>";
+        html += "<td>" + year + "</td>";
+        html += '<td><span class="dropdownEditArrow"><i class="fa fa-angle-down" style="font-size:36px"></i></span></td>';
+      html += "</tr>";
+      html += '<tr class="dropdownEditDiv">';
+        html += '<td ><p>Navn</p><input type="text" id="name" name="name1"></td>';
+        html += '<td ><p>Status</p><input type="text" id="status" name="status1"></td>';
+        html += '<td ><p>Beskrivelse</p><input type="text" id="description" name="description1"></td>';
+        html += '<td ><p>Dato</p><input type="text" id="date" name="date1"></td>';
+        html += '<td ><button class="dropdownDivCancelBtn">Annuller</button><button class="dropdownDivCloseBtn">Gem</button></td>';
+      html += "</tr>";
+    };
+
+    /* erstater <tbody> af <table> */
+    document.getElementById("mainTableRows").innerHTML += html;
+
+    /* Laver dropdown rediger bokse til hver af taskene */
+    let dropdownEditArrow = document.querySelectorAll(".dropdownEditArrow");
+    let dropdownEditBox = document.getElementsByClassName("dropdownEditDiv");
+    let dropdownDivCloseBtn = document.getElementsByClassName("dropdownDivCloseBtn");
+    let dropdownDivCancelBtn = document.getElementsByClassName("dropdownDivCancelBtn");
+    
+    for (let i = 0; i < dropdownEditArrow.length; i++) {
+      dropdownEditArrow[i].addEventListener("click", openDropdownBox);
+      dropdownDivCloseBtn[i].addEventListener("click", closeDropdownBox);
+      dropdownDivCancelBtn[i].addEventListener("click", cancelCloseDropdownBox);
+
+      function openDropdownBox() {
+        dropdownEditBox[i].style.display = "block";
+      };
+
+      function closeDropdownBox() {
+        if( document.getElementById('name').value == ""){
+          alert("Navn skal være udfyldt");
+          return false;
+        } else if(document.getElementById('status').value == "") {
+          alert("Status skal være udfyldt");
+          return false;
+        } else if(document.getElementById('description').value == "") {
+          alert("Beskrivelse skal være udfyldt");
+          return false;
+        } else if(document.getElementById('date').value == "") {
+          alert("dato skal være udfyldt");
+          return false;
+        } else{
+          alert("Ny feature oprettet");
+          dropdownEditBox[i].style.display = "none";
+        }
+      };
+
+      function cancelCloseDropdownBox() {
+        dropdownEditBox[i].style.display = "none";
+      };
+    
+    }; 
   };
+ 
 
 
 
