@@ -170,7 +170,7 @@
       /* console.log(dataTasks.sort(byDate)); */
 
       /* Tæller hvor mange bedømmelser hver task har fået gennem bedømmelses_id, som definerer hvilken task bedømmelserne hører til, og selve bedømmelsen fra den joinede tabel,
-       som skal være en bolean */
+       som skal være en bolean. Jeg er ikke blevet færdig med, men lader det stå. */
       let countOccurrencesOfEvaluations = (dataTasks) => {
           let map = {};
           for ( var i = 0; i < dataTasks.length; i++ ) {
@@ -194,7 +194,7 @@
 
      var top3DatatasksSliced = top3DateFilter.slice(0,3);
 
-    console.log(top3DatatasksSliced);
+     console.log(top3DatatasksSliced);
 
       /* looper gennem dataen */
       for (let i = 0; i < top3DatatasksSliced.sort(byDate).length; i++)
@@ -292,15 +292,9 @@
       }; 
     };
     
-    console.log()
 
     /* html værdier for <tbody> */
     let html = "";
-
-    /* Sorterer datoerne kronologisk */
-    function byDate(a, b) {
-      return new Date(a.dato).valueOf() - new Date(b.dato).valueOf(); 
-    } 
 
         /* looper gennem dataen */
     for (let i = 0; i < dataTasks.sort(byDate).length; i++)
@@ -403,7 +397,7 @@
 
 
 
-  /* ajax POST kald */
+  /* ajax POST kald. Virker ikke helt. Returnerer null i database, Det har noget med dato datatypen. har ikke nået at kigge på det. */
   let form = document.querySelector('#form');
 
   /* sætter en eventlistener på typen 'submit' i formen */
