@@ -1,9 +1,9 @@
 :root {
-  --darkblue: #152F7B;
-  --red: #F06F63;
-  --green:#22C55E;
-  --white:#fff;
-  --yellow:#FFA614;
+--darkblue: #152F7B;
+--red: #F06F63;
+--green:#22C55E;
+--white:#fff;
+--yellow:#FFA614;
 }
 
 body {
@@ -357,7 +357,7 @@ label {
     color: var(--green);
 }
 
-  #svg-line-box{
+#svg-line-box{
     position: absolute;
     z-index: -1;
     width: 100%;
@@ -436,6 +436,10 @@ padding: 5%;
     align-self: flex-end;
     padding: 2%;
     margin-left: 2%;
+}
+
+.close{
+    color: var(--red);
 }
 
 
@@ -632,7 +636,7 @@ padding: 5%;
         width: auto;
     }
 
-     .content-table th, .content-table td {
+    .content-table th, .content-table td {
         padding: 10px 50px;
     }
 

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kunder</title>
-    <link rel="stylesheet" type="text/css" href="../Styles.css" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
 </head>
@@ -18,7 +18,7 @@
     </div>
     <div id="overlay">
         <div class="overlay-box">
-            <span class="close" onclick="hideOverlay()">&times;</span>
+            <div class="close" onclick="hideOverlay()">&times;</div>
             <div id="overlay-content"></div>
             <h2>Kommentar:</h2>
             <div class="comment">
@@ -41,7 +41,7 @@
     <script>
         /* ajax GET kald */
         let ajax = new XMLHttpRequest();
-        ajax.open("GET", "http://localhost/roadmap/PHP/dbCon/Api.php?action=jointasks", true);
+        ajax.open("GET", "https://renglund.com/api/api.php?action=jointasks", true);
         ajax.send();
 
         /* modtager respons fra Api.php */
