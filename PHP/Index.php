@@ -170,7 +170,8 @@
       /* console.log(dataTasks.sort(byDate)); */
 
       /* Tæller hvor mange bedømmelser hver task har fået gennem bedømmelses_id, som definerer hvilken task bedømmelserne hører til, og selve bedømmelsen fra den joinede tabel,
-       som skal være en bolean. Jeg er ikke blevet færdig med, men lader det stå. */
+       som skal være en bolean. Den viser flere af de samme rækker, da en task har flere bedømmelser og jeg har ikke fået sorteret det.
+       Jeg er ikke blevet færdig med, men lader det stå. */
       let countOccurrencesOfEvaluations = (dataTasks) => {
           let map = {};
           for ( var i = 0; i < dataTasks.length; i++ ) {
